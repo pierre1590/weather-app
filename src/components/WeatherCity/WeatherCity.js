@@ -21,10 +21,10 @@ function WeatherCity({data}){
           </div>
           <div className="other-info">
             <img src={Sunrise} alt="Sunrise" className="sunrise"/>  : {data.sunrise}<br/>
-            <img src={Sunset} alt="Sunset" className="sunset"/> : {data.sunset}
-            <p>Wind speed:</p>
-            <p>Humidity:</p>
-            <p></p>
+            <img src={Sunset} alt="Sunset" className="sunset"/> : {data.sunset}<br/>
+            <span>Humidity:</span><br/>
+            <span>Wind speed:</span>
+            
           </div> 
         </div>
     )

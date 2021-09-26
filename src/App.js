@@ -11,8 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [loading, setLoading] = useState(true);
 	const [weather, setWeather] = useState([]);
-	const [weatherforecast, setForecast] = useState();
-	const [city, setCity] = useState("");
+	const [weatherforecast, setForecast] = useState('');
+	const [city, setCity] = useState('');
 	const [isError, setError] = useState(false);
 	const [delay, setDelay] = useState(1000);
 
