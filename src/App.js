@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import SearchBar from './components/SearchBar';
-import WeatherCity from './components/WeatherCity';
-import Forecast from './components/Forecast';
-import {Container,Button, Row, Col} from 'react-bootstrap';
+import SearchBar from './components/SearchBar/SearchBar';
+import WeatherCity from './components/WeatherCity/WeatherCity';
+import Forecast from './components/Forecast/Forecast';
+import {Container,Button} from 'react-bootstrap';
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,6 +20,7 @@ function App() {
 		if (!city) {
 			return;
 		}
+
 		getCityWeather(city)
 			.then((weatherData) => {
 				setWeather(weatherData);
@@ -69,14 +70,12 @@ function App() {
           <i className="fas fa-heart"></i>
         </Button>
         <SearchBar 
-          getCityWeather={getSearchWeather}
+          			getCityWeather={getSearchWeather}
 					changeLocation={onInputChange}
 					isError={isError}
         />
       </div>
-      <Row style={{margin: '60px', padding:'10px'}}>
           <WeatherCity data={weather}/>
-      </Row>
           <Forecast forecast={weatherforecast}/>
     </Container>
     <div className="footer">

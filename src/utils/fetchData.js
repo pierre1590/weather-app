@@ -5,7 +5,6 @@ export const getCityWeather = (city) => {
 	axios.get(
 		`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
 	)
-		.then((res) => res.json())
 		.then((res) => {
 			let weatherData = {
 				location: res.name,
@@ -26,7 +25,6 @@ export const getCityForecast = (city) => {
 	axios.get(
 		`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
 	)
-		.then((res) => res.json())
 		.then((res) => {
 			const forecast = [];
 			for (let i = 0; i < res.list.length; i += 8) {

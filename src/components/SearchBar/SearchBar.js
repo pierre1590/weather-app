@@ -18,6 +18,7 @@ function SearchBar({ getCityWeather, changeLocation, isError }){
                         placeholder="Search City..."
                         aria-label="search city"
                         aria-describedby="basic-addon2"
+                        autoComplete="true"
                         onChange={(e) => {
 							changeLocation(e.target.value);
 						}}

@@ -1,0 +1,63 @@
+.city-weather {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	flex: 0 3 2;
+	text-align: center;
+}
+
+.townInfo {
+  flex: 1;
+  padding-right: 10px;
+}
+.townInfo h2 {
+  font-size: var(--fs-xl);
+  margin: 0;
+}
+.townInfo .country {
+  font-size: var(--fs-h2);
+}
+.townInfo h1 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-light);
+}
+.townInfo p {
+  font-size: var(--fs-h2);
+  margin: 0;
+  color: var(--clr-gray);
+}
+
+.weather-units {
+  flex: 4;
+  --border: solid 0.25em var(--clr-accent);
+  border-left: var(--border);
+  border-right: var(--border);
+  padding: 0px 2em;
+}
+.weather-units .tempInfo {
+  padding-bottom: 20px;
+}
+.weather-units .info {
+  color: #f7f7f7;
+}
+.weather-units .section-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.other-info{
+  flex: 4;
+}
+
+
+.sunrise{
+  width:25px;
+  height:25px;
+}
+
+.sunset{
+  width:25px;
+  height:25px;
+}
