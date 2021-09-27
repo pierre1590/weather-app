@@ -2,12 +2,12 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	flex: 0 3 2;
+	flex: 2 ;
 	text-align: center;
 }
 
 .townInfo {
-  flex: 1;
+  flex: 2 ;
   padding-right: 10px;
 }
 .townInfo h2 {
@@ -28,7 +28,7 @@
 }
 
 .weather-units {
-  flex: 4;
+  flex: 2;
   --border: solid 0.25em var(--clr-accent);
   border-left: var(--border);
   border-right: var(--border);

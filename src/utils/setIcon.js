@@ -81,7 +81,7 @@ const getIcon = (code) => {
 			return <img className="Icon" src={Fog} alt={Fog} />;
 
 		default:
-			return <img className="Icon" src={Cloudy} alt={Cloudy} />;
+			return <img className="Icon" src={Sun} alt={Sun} />;
 	}
 };
 export default getIcon;

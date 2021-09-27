@@ -12,7 +12,7 @@ function WeatherCity({data}){
             <h2>
                 {data.location}, {data.country}
             </h2>
-            <p>{moment().format('dddd, MMM Do YYYY, h:mm a')}</p>
+            <p>{moment().format('dddd MMM Do YYYY, h:mm a')}</p>
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
@@ -23,8 +23,10 @@ function WeatherCity({data}){
             <img src={Sunrise} alt="Sunrise" className="sunrise"/>  : {data.sunrise}<br/>
             <img src={Sunset} alt="Sunset" className="sunset"/> : {data.sunset}<br/>
             <span>Humidity:</span><br/>
-            <span>Wind speed:</span>
-            
+            <span>Wind speed:</span><br/>
+            <span>Wind direction:</span><br/>
+            <span>Pressure:</span><br/>
+            <span>Visibility:</span>
           </div> 
         </div>
     )

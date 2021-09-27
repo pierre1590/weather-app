@@ -2,7 +2,7 @@ import axios from "axios";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const getCityWeather = (city) => {
-	axios.get(
+	return axios.get(
 		`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
 	)
 		.then((res) => {
@@ -22,7 +22,7 @@ export const getCityWeather = (city) => {
 };
 
 export const getCityForecast = (city) => {
-	axios.get(
+return	axios.get(
 		`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
 	)
 		.then((res) => {

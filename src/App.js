@@ -12,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 	const [weather, setWeather] = useState([]);
 	const [weatherforecast, setForecast] = useState('');
-	const [city, setCity] = useState('');
+	const [city, setCity] = useState('Turi');
 	const [isError, setError] = useState(false);
 	const [delay, setDelay] = useState(1000);
 
@@ -21,18 +21,19 @@ function App() {
 			return;
 		}
 
-		getCityWeather(city)
-			.then((weatherData) => {
+		getCityWeather(city)  
+		.then((weatherData) => {
 				setWeather(weatherData);
 				setLoading(false);
 				return;
 			})
-			.catch((error) => {
+		.catch((error) => {
 				setError(true);
 				return;
 			});
+		
 	}, [city, isError]);
-
+  
 	useEffect(() => {
 		if (!city) {
 			return;
@@ -64,25 +65,36 @@ function App() {
 
   return (
     <div className="App">
-    <Container fluid className="container">
-      <div className="header">
-        <Button variant="danger" className="favorites" style={{background:'transparent',border:'0',outlineStyle: 'none'}}>
-          <i className="fas fa-heart"></i>
-        </Button>
-        <SearchBar 
-          			getCityWeather={getSearchWeather}
-					changeLocation={onInputChange}
-					isError={isError}
-        />
-      </div>
-          <WeatherCity data={weather}/>
-          <Forecast forecast={weatherforecast}/>
-    </Container>
-    <div className="footer">
-      Created with <i className="fas fa-heart"></i> by Piero Sabino
-    </div>
-  </div>
-  );
+	  {loading ? (
+		  <div className="loader"></div>
+	  ):(
+		  <>
+		    {weather && (
+				<div className="mainWeather">
+					<Container fluid className="container">
+						<div className="header">
+							<Button variant="danger" className="favorites" style={{background:'transparent',border:'0',outlineStyle: 'none'}}>
+							<i className="fas fa-heart"></i>
+							</Button>
+							<SearchBar 
+										getCityWeather={getSearchWeather}
+										changeLocation={onInputChange}
+										isError={isError}
+							/>
+						</div>
+						<div sytle={{marginTop:'8%'}}>
+								<WeatherCity data={weather}/>
+						</div>
+						<div style={{marginTop:'12%'}}>
+								<Forecast forecast={weatherforecast}/>
+						</div>
+					</Container>
+				</div> 
+			)}
+		</>
+		)}
+	</div>
+	);
 }
 
 export default App;
