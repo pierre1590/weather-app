@@ -17,11 +17,13 @@ function WeatherCity({data}){
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
                 {setIcon(data.iconId)}<br/>
-                <span className="info_max">{Math.ceil(data.temp_max)} °C </span> - <span className="info_min">{Math.ceil(data.temp_min)} °C</span>
+                 {data.temp}°C
           </div>
           <div className="other-info">
             <img src={Sunrise} alt="Sunrise" className="sunrise"/>{data.sunrise}<br/>
             <img src={Sunset} alt="Sunset" className="sunset"/> {data.sunset}<br/>
+            <span className="info_max">{data.temp_max} °C </span><br/>
+            <span className="info_min">{data.temp_min} °C</span><br/>
             <span>Humidity: {data.humidity}%</span><br/>
             <span>Wind speed: {Math.round(data.wind_speed*3.6)} km/h</span><br/>
             <span>Wind direction:{data.wind_deg}</span><br/>
