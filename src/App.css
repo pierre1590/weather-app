@@ -34,31 +34,6 @@ body{
   justify-content:flex-start;
 }
 
-.loader {
-  border: 6px solid var(--clr-accent);
-  border-top: 6px solid var(--clr-light);
-  border-radius: 50%;
-  margin: 30px;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
- }
-  100% {
-    transform: rotate(360deg);
- }
-}
-.mainWeather {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 15px 35px;
-  max-width: 1050px;
-  margin: 30px auto;
-  border-radius: 20px;
-}
-
 
 
 

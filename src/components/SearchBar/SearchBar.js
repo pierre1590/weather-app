@@ -2,7 +2,7 @@ import React from 'react';
 import {InputGroup, FormControl, Button, Form} from 'react-bootstrap';
 
 
-function SearchBar({ getCityWeather, changeLocation, isError }){
+function SearchBar({ getCityWeather, changeLocation}){
    
 
 
@@ -26,11 +26,7 @@ function SearchBar({ getCityWeather, changeLocation, isError }){
                     <Button variant="primary" id="button-addon2" >
                         <i className="fas fa-search"></i>
                     </Button>
-                    {isError ? (
-						<label htmlFor="input" className="label">
-							<span className="error">Location not found</span>
-						</label>
-					) : null}
+                    
                 </InputGroup>
                 </Form> 
             </div>

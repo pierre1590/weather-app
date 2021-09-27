@@ -16,10 +16,10 @@ function Forecast({ forecast }) {
 										<div className="day">
 											{moment(item.dt_txt).format("ddd")}
 										</div>
-										<div className="icon">{getIcon(item.weather[0].id)}</div>
+										<div className="icon">{getIcon(item.data.weather[0].id)}</div>
 										<div>/</div>
 										<div className="description">
-											{item.weather[0].description}
+											{item.data.weather[0].description}
 										</div>
 									</div>
 								);

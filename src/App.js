@@ -9,7 +9,7 @@ import { useDebounce } from "./utils/debounceFn";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  
 	const [weather, setWeather] = useState([]);
 	const [weatherforecast, setForecast] = useState('');
 	const [city, setCity] = useState('Turi');
@@ -22,9 +22,9 @@ function App() {
 		}
 
 		getCityWeather(city)  
-		.then((weatherData) => {
-				setWeather(weatherData);
-				setLoading(false);
+		.then((setData) => {
+				setWeather(setData);
+				
 				return;
 			})
 		.catch((error) => {
@@ -65,12 +65,6 @@ function App() {
 
   return (
     <div className="App">
-	  {loading ? (
-		  <div className="loader"></div>
-	  ):(
-		  <>
-		    {weather && (
-				<div className="mainWeather">
 					<Container fluid className="container">
 						<div className="header">
 							<Button variant="danger" className="favorites" style={{background:'transparent',border:'0',outlineStyle: 'none'}}>
@@ -79,7 +73,6 @@ function App() {
 							<SearchBar 
 										getCityWeather={getSearchWeather}
 										changeLocation={onInputChange}
-										isError={isError}
 							/>
 						</div>
 						<div sytle={{marginTop:'8%'}}>
@@ -89,10 +82,6 @@ function App() {
 								<Forecast forecast={weatherforecast}/>
 						</div>
 					</Container>
-				</div> 
-			)}
-		</>
-		)}
 	</div>
 	);
 }

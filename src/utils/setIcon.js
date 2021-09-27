@@ -9,6 +9,7 @@ import Rain5 from "../assets/icons/animated/rainy-5.svg";
 import Rain6 from "../assets/icons/animated/rainy-6.svg"; //alot of rain
 import Rain7 from "../assets/icons/animated/rainy-7.svg"; //heavy rain
 import Sun from "../assets/icons/animated/day.svg";
+import Moon from '../assets/icons/animated/night.svg';
 import Snowy from "../assets/icons/animated/snowy-6.svg";
 import Thunder from "../assets/icons/animated/thunder.svg";
 import Fog from "../assets/icons/animated/fog.png";
@@ -16,20 +17,27 @@ import Haze from "../assets/icons/animated/haze.png";
 import Mist from "../assets/icons/animated/mist.png";
 import Dust from "../assets/icons/animated/dust.png";
 import Smoke from "../assets/icons/animated/smoke.png";
+import moment from "moment";
 
 const getIcon = (code) => {
 	switch (code) {
 		case 800:
+			if(moment().format('h:mm a')<"06.00 pm"){
 			return <img className="Icon" src={Sun} alt={Sun} /> ;
-
+			}else{
+				return <img className="Icon" src={Moon} alt={Moon} /> ;
+			}
 		case 801: //few clouds
 			return <img className="Icon" src={Cloudy} alt={Cloudy} />;
 
 		case 802: //scattered clouds
 			return <img className="Icon" src={Cloudy2} alt={Cloudy2} />;
 
-		case 803: //broken clounds
+		case 803: //broken clouds
 			return <img className="Icon" src={Cloudy3} alt={Cloudy3} />;
+
+		case 804: //overcast clouds
+			return <img className="Icon" src={Cloudy2} alt={Cloudy2} />;
 
 		case 500: //light rain
 			return <img className="Icon" src={Rain1} alt={Rain1} />;
