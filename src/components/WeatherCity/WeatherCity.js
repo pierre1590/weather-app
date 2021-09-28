@@ -1,8 +1,8 @@
 import React from "react";
 import moment from "moment";
 import setIcon from '../../utils/setIcon.js';
-import Sunrise from './alba.gif';
-import Sunset from './tramonto.gif';
+import Sunrise from '../../assets/images/alba.gif';
+import Sunset from '../../assets/images/tramonto.gif';
 import Heart from '../Heart/Heart';
 import './WeatherCity.css';
 
