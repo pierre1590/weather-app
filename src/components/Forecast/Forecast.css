@@ -84,3 +84,11 @@
         border-bottom: none;
    }
 }
+
+.temps .info_max {
+    color: #f03;
+  }
+  
+  .temps .info_min {
+    color: #00a;
+  }

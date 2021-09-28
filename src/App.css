@@ -6,14 +6,14 @@ body{
   background: url(./assets/images/background.jpeg);
   background-size:cover;
   background-repeat:no-repeat;
-  height: 85vh;
+  height: 10vh;
 	width: 100vw;
 }
 
 .container{
   margin: 5% 50% auto;
-  max-width: auto;
-  height: 60vh;
+  width: 100vw;
+  height: 75vh;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 5px black;
@@ -48,13 +48,13 @@ body{
   color:red;
 }
 
-@media only screen and (max-width:300px){
+@media only screen and (min-width:300px){
   .searchbar{
     margin-left:10px;
   }
   .container{
-    width:300px;
-    height:800px;
+    width:35vw;
+    height:45vh;
   }
 
   .footer{
@@ -62,7 +62,21 @@ body{
   }
 }
 
+@media only screen and (min-width:500px){
+  .container{
+    width:55vw;
+    height:20vh;
+  }
+
+}
+
 @media only screen and (max-width:1080px){
+  .container{
+    width:55vw;
+    height:150vh;
+  }
+
+  
   .footer{
     margin-left:60%;
   }

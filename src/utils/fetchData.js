@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import axios from "axios";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -22,6 +22,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
          sunset: res.data.sys.sunset,
          timezone: res.data.timezone / 3600
      };
+     console.log(res);
      return setData;
  }
 
@@ -29,11 +30,13 @@ export const getCityForecast = async (city) => {
 	const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`;
 	const res = await axios.get(url);
     const forecast = [];
-    for (let i = 0; i < res.data.length; i += 8) {
-        forecast.push(res.data.list[i + 5]);
+    console.log(res);
+    for (let i = 0; i < res.data.list.length; i += 8) {
+        forecast.push(res.data.list[i + 6]);
     }
     return forecast;
-}
+};
+
 
 export const useGeoLocation = () => {
     const [location, setLocation] = useState({
