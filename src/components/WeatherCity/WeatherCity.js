@@ -3,6 +3,7 @@ import moment from "moment";
 import setIcon from '../../utils/setIcon.js';
 import Sunrise from './alba.gif';
 import Sunset from './tramonto.gif';
+import Heart from '../Heart/Heart';
 import './WeatherCity.css';
 
 function WeatherCity({data}){
@@ -10,9 +11,10 @@ function WeatherCity({data}){
         <div className="city-weather">
           <div className="town-info">  
             <h2>
-                {data.location}, {data.country}
+                {data.location}, {data.country}<span><Heart /></span>
             </h2>
             <p>{moment().utc().add(data.timezone, 'hours').format('dddd, MMM Do YYYY, h:mm A')}</p>
+            
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
@@ -25,9 +27,9 @@ function WeatherCity({data}){
                 <span className="info_max">Max: {data.temp_max} °C </span><br/>
                 <span className="info_min">Min: {data.temp_min} °C</span><br/>
             <span>Humidity: {data.humidity}%</span><br/>
-            <span>Wind speed: {Math.round(data.wind_speed*3.6)} km/h</span><br/>
-            <span>Wind direction: {data.wind_deg}</span><br/>
-            <span>Pressure: {data.pressure}hPa</span><br/>
+            Wind speed: {Math.round(data.wind_speed*3.6)} km/h 
+                {data.wind_deg}<br/>
+            <span>Pressure: {data.pressure} hPa</span><br/>
             <span>Visibility: {data.visibility} Km</span>
           </div> 
         </div>

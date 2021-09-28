@@ -6,19 +6,20 @@ body{
   background: url(./assets/images/background.jpeg);
   background-size:cover;
   background-repeat:no-repeat;
-  height: 10vh;
+  height: 80vh;
 	width: 100vw;
 }
 
 .container{
-  margin: 5% 50% auto;
-  width: 100vw;
-  height: 75vh;
+  margin: 6% 80% auto;
+  width: 40vw;
+  height:70vh ;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 5px black;
   opacity: 0.8;
   background: white;
+  font-family:'PT Serif', serif;
 }
 
 .header{
@@ -48,36 +49,44 @@ body{
   color:red;
 }
 
-@media only screen and (min-width:300px){
-  .searchbar{
-    margin-left:10px;
-  }
-  .container{
-    width:35vw;
-    height:45vh;
+
+  /* Mobile Styles */
+  @media only screen and (max-width: 350px) {
+    body {
+      height: 160vh;
+    }
+
+    .container{
+      height: 160vh;
+    }
   }
 
-  .footer{
-    margin-left:50%;
-  }
-}
+  @media only screen and (max-width: 590px) {
+    body {
+      height: 270vh;
+    }
 
-@media only screen and (min-width:500px){
-  .container{
-    width:55vw;
-    height:20vh;
-  }
-
-}
-
-@media only screen and (max-width:1080px){
-  .container{
-    width:55vw;
-    height:150vh;
+    .container{
+      height: 270vh;
+    }
   }
 
-  
-  .footer{
-    margin-left:60%;
+  @media only screen and (min-width: 591px) {
+    body {
+      height: 225vh;
+    }
+
+    .container{
+      height: 225vh;
+    }
   }
-}
+
+  @media only screen and (min-width: 1080px) {
+    body {
+      height: 70vh;
+    }
+
+    .container{
+      height: 70vh;
+    }
+  }

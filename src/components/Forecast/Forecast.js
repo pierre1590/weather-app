@@ -18,8 +18,8 @@ function Forecast({ forecast }) {
 										</div>
 										<div className="icon">{getIcon(item.weather[0].id)}</div>
 										<div className="temps">
-											<span className="info_max">{Math.floor(item.main.temp_max)}°C </span> / 
-											<span className="info_min"> {Math.floor(item.main.temp_min)}°C </span>
+											<span>{Math.floor(item.main.temp)}°C </span>  
+											
 										</div>
 										<div className="description">
 											{item.weather[0].description}
