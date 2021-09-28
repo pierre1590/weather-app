@@ -17,7 +17,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 				wind_deg:res.data.wind.deg,
 				humidity: res.data.main.humidity,
 				pressure: res.data.main.pressure,
-				visibility: res.data.visibility,
+				visibility: (res.data.visibility/1000).toFixed(1),
 				iconId: res.data.weather[0].id,
 				sunrise:res.data.sys.sunrise,
 				sunset:res.data.sys.sunset,

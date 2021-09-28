@@ -37,12 +37,8 @@
 .weather-units .tempInfo {
   padding-bottom: 20px;
 }
-.weather-units .info_max {
-  color: #f03;
-}
-
-.weather-units .info_min {
-  color: #00a;
+.weather-units .description{
+  font-size:25px;
 }
 
 
@@ -55,8 +51,15 @@
 
 .other-info{
   flex: 3.5;
+  font-size: 18px;
+}
+.other-info .info_max {
+  color: #f03;
 }
 
+.other-info .info_min {
+  color: #00a;
+}
 
 .sunrise{
   width:25px;
