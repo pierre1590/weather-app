@@ -27,8 +27,7 @@ function WeatherCity({data}){
                 <span className="info_max">Max: {data.temp_max} °C </span><br/>
                 <span className="info_min">Min: {data.temp_min} °C</span><br/>
             <span>Humidity: {data.humidity}%</span><br/>
-            Wind speed: {Math.round(data.wind_speed*3.6)} km/h 
-                {data.wind_deg}<br/>
+            Wind speed: {Math.round(data.wind_speed*3.6)} km/h - {data.wind_deg}°<br/>
             <span>Pressure: {data.pressure} hPa</span><br/>
             <span>Visibility: {data.visibility} Km</span>
           </div> 

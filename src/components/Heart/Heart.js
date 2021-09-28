@@ -9,7 +9,7 @@ return(
        
         
         {saved >= 1 ? (
-            <IoIosHeart onClick={() => setSaved(1)}/>
+            <IoIosHeart onClick={() => setSaved(0)}/>
         ) : (
             <IoIosHeartEmpty onClick={() => setSaved(1)}/>
         )}
