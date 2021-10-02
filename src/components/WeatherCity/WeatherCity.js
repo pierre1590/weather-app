@@ -8,6 +8,8 @@ import Wind from '../Wind/Wind';
 import './WeatherCity.css';
 
 function WeatherCity({data}){
+   
+
     return (
         <div className="city-weather">
           <div className="town-info">  

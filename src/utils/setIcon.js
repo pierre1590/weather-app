@@ -9,7 +9,7 @@ import Rain5 from "../assets/icons/animated/rainy-5.svg";
 import Rain6 from "../assets/icons/animated/rainy-6.svg"; //alot of rain
 import Rain7 from "../assets/icons/animated/rainy-7.svg"; //heavy rain
 import Sun from "../assets/icons/animated/day.svg";
-
+import Moon from "../assets/icons/animated/night.svg";
 import Snowy from "../assets/icons/animated/snowy-6.svg";
 import ThunderStorm from "../assets/icons/animated/thunder.svg";
 import Fog from "../assets/icons/animated/fog.png";
@@ -23,7 +23,7 @@ import Smoke from "../assets/icons/animated/smoke.png";
 
 const getIcon = (code) => {
 	switch (code) {
-		case 800: //Sun
+		case 800:
 			return <img className="Icon" src={Sun} alt={Sun} />;
 
 		case 801: //few clouds

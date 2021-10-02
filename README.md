@@ -1,3 +1,5 @@
+![AppVeyor](https://img.shields.io/appveyor/build/pierre1590/weather-app?color=green&style=plastic)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
