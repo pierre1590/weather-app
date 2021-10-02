@@ -36,8 +36,6 @@ body{
 }
 
 
-
-
 .footer{
   margin-left: 65%;
   color: white;
@@ -53,37 +51,57 @@ body{
   /* Mobile Styles */
   @media only screen and (max-width: 350px) {
     body {
-      height: 160vh;
+      height: 450vh;
     }
 
     .container{
-      height: 160vh;
+      height: 350vh;
     }
   }
 
   @media only screen and (max-width: 590px) {
     body {
-      height: 270vh;
+      height: 250vh;
     }
 
     .container{
-      height: 270vh;
+      height: 140vh;
     }
   }
 
-  @media only screen and (min-width: 591px) {
+  @media only screen and (max-width: 680px) {
     body {
-      height: 225vh;
+      height: 400vh;
     }
 
     .container{
-      height: 225vh;
+      height: 230vh;
     }
   }
 
-  @media only screen and (min-width: 1080px) {
+  @media only screen and (max-width: 750px) {
     body {
-      height: 70vh;
+      height: vh;
+    }
+
+    .container{
+      height: 235vh;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {
+    body {
+      height: 250vh;
+    }
+
+    .container{
+      height: 230vh;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    body {
+      height: 73vh;
     }
 
     .container{

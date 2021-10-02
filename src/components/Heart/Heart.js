@@ -1,26 +1,19 @@
 import React, {useState} from 'react';
 import {IoIosHeartEmpty, IoIosHeart} from 'react-icons/io';
 
-function Heart(value) {
-  const [saved,setSaved] = useState('')
+function Heart() {
+ const [favorites, setFavorites] = useState([]);
+
+
 
 return(
-    <div style={styles.heartStyle}>
-       
-        
-        {saved >= 1 ? (
-            <IoIosHeart onClick={() => setSaved(0)}/>
-        ) : (
-            <IoIosHeartEmpty onClick={() => setSaved(1)}/>
-        )}
+    <div>
+      <IoIosHeart  onClick={()=>setFavorites(0)} style={{color:'red'}}/>
+      <IoIosHeartEmpty onClick={()=>setFavorites(1)} style={{color:'red'}}/>
+      
     </div>
   );
 }
 
 export default Heart;
 
-const styles={
-    heartStyle:{
-        color:'red'
-    }
-}

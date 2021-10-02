@@ -14,7 +14,7 @@ function WeatherCity({data}){
                 {data.location}, {data.country}<span><Heart /></span>
             </h2>
             <p>{moment().utc().add(data.timezone, 'hours').format('dddd, MMM Do YYYY, h:mm A')}</p>
-            
+           
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
@@ -27,7 +27,7 @@ function WeatherCity({data}){
                 <span className="info_max">Max: {data.temp_max} °C </span><br/>
                 <span className="info_min">Min: {data.temp_min} °C</span><br/>
             <span>Humidity: {data.humidity}%</span><br/>
-            Wind speed: {Math.round(data.wind_speed*3.6)} km/h - {data.wind_deg}°<br/>
+            Wind : {Math.round(data.wind_speed*3.6)} km/h - {data.wind_deg}°<br/>
             <span>Pressure: {data.pressure} hPa</span><br/>
             <span>Visibility: {data.visibility} Km</span>
           </div> 

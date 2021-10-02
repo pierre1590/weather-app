@@ -2,7 +2,7 @@ import React from 'react';
 import {InputGroup, FormControl, Button, Form} from 'react-bootstrap';
 
 
-function SearchBar({ getCityWeather, changeLocation}){
+function SearchBar({ getCityWeather, changeLocation, isError}){
    
 
 
@@ -11,9 +11,6 @@ function SearchBar({ getCityWeather, changeLocation}){
               <Form onSubmit={(e)=>
               getCityWeather(e)}>  
                 <InputGroup className="mb-3 " >
-                    <Button variant="primary" id="button-addon2">
-                            <i className="fas fa-map-marker-alt"></i>
-                    </Button>
                     <FormControl
                         placeholder="Search City..."
                         aria-label="search city"
@@ -25,9 +22,13 @@ function SearchBar({ getCityWeather, changeLocation}){
                     />
                     <Button variant="primary" id="button-addon2" >
                         <i className="fas fa-search"></i>
-                    </Button>
-                    
+                    </Button><br/>
                 </InputGroup>
+                {isError ? (
+                        <label htmlFor="input" className="label">
+                          <span className="error" style={{color:'red',fontSize:'20px',}}>City not found !</span>
+                        </label>
+                    ) : null}
                 </Form> 
             </div>
         )

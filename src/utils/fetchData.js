@@ -31,8 +31,8 @@ export const getCityForecast = async (city) => {
 	const res = await axios.get(url);
     const forecast = [];
     console.log(res);
-    for (let i = 0; i < res.data.list.length; i += 8) {
-        forecast.push(res.data.list[i + 6]);
+    for (let i = 0; i < res.data.list.length; i +=8) {
+        forecast.push(res.data.list[i + 4]);
     }
     return forecast;
 };

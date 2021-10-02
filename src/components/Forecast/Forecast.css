@@ -36,6 +36,8 @@
 .forecast-day:nth-child(5) {
     animation-delay: 200ms;
 }
+
+
 @keyframes slideUpIn {
     0% {
         opacity: 0;
@@ -47,6 +49,18 @@
    }
 }
 
+
+@media only screen and (min-width: 250px) {
+    .temps{
+        padding:12px;
+    }
+}
+
+@media only screen and (min-width: 320px) {
+    .temps{
+        padding:12px;
+    }
+}
 
 @media only screen and (min-width: 999px) {
     .forecast-days {
