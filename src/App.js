@@ -9,7 +9,7 @@ import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from 'react-loading';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToastContainer,toast } from 'react-toastify';
+
 
 function App() {
   
@@ -28,8 +28,8 @@ function App() {
 
 		getCityWeather(city)  
 		.then((setData) => {
-				 setLoading(false);
 				setWeather(setData);
+				setLoading(false);
 				return;
 			})
 		.catch((error) => {
@@ -96,7 +96,6 @@ function App() {
 			)}
 		</>	  
 		)}
-		<ToastContainer/>
 	</div>	
 	);
 }
