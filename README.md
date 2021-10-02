@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/status/pierre1590/weather-app/sfasdf?color=green)
+![GitHub Workflow Status](https://img.shields.io/github/status/pierre1590/weather-app/?color=green)
 
 # Getting Started with Create React App
 
