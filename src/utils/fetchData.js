@@ -12,7 +12,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
          temp_min: res.data.main.temp_min,
          description: res.data.weather[0].description,
          country: res.data.sys.country,
-         wind_speed: res.data.wind.speed,
+         wind_speed: Math.floor(res.data.wind.speed*3.6),
          wind_deg: res.data.wind.deg,
          humidity: res.data.main.humidity,
          pressure: res.data.main.pressure,

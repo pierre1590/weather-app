@@ -23,7 +23,10 @@ import Smoke from "../assets/icons/animated/smoke.png";
 const getIcon = (code) => {
 	switch (code) {
 		case 800:
-			 return <img className="Icon" src={Sun} alt={Sun} /> || <img className="Icon" src={Moon} alt={Moon}/>;	
+			if(code = '01d'){
+			 	return <img className="Icon" src={Sun} alt={Sun} />; 	
+			}else
+			 return <img className="Icon" src={Moon} alt={Moon} />; 
 
 		case 801: //few clouds
 			return <img className="Icon" src={Cloudy} alt={Cloudy} />;
