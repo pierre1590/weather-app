@@ -4,6 +4,7 @@ import setIcon from '../../utils/setIcon.js';
 import Sunrise from '../../assets/images/alba.gif';
 import Sunset from '../../assets/images/tramonto.gif';
 import Heart from '../Heart/Heart';
+import Wind from '../Wind/Wind';
 import './WeatherCity.css';
 
 function WeatherCity({data}){
@@ -11,10 +12,10 @@ function WeatherCity({data}){
         <div className="city-weather">
           <div className="town-info">  
             <h2>
-                {data.location}, {data.country}<span><Heart /></span>
+                {data.location}, {data.country}
             </h2>
             <p>{moment().utc().add(data.timezone, 'hours').format('dddd, MMM Do YYYY, h:mm A')}</p>
-           
+           <Heart/>
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
@@ -27,7 +28,7 @@ function WeatherCity({data}){
                 <span className="info_max">Max: {data.temp_max} °C </span><br/>
                 <span className="info_min">Min: {data.temp_min} °C</span><br/>
             <span>Humidity: {data.humidity}%</span><br/>
-            Wind : {Math.round(data.wind_speed*3.6)} km/h - {data.wind_deg}°<br/>
+            Wind : {Math.round(data.wind_speed*3.6)} km/h - {data.wind_deg}° {Wind(data.wind_deg)} <br/>
             <span>Pressure: {data.pressure} hPa</span><br/>
             <span>Visibility: {data.visibility} Km</span>
           </div> 

@@ -8,9 +8,10 @@ function Heart() {
 
 return(
     <div>
-      <IoIosHeart  onClick={()=>setFavorites(0)} style={{color:'red'}}/>
-      <IoIosHeartEmpty onClick={()=>setFavorites(1)} style={{color:'red'}}/>
-      
+     
+           
+          
+     
     </div>
   );
 }

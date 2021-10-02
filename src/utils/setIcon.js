@@ -11,13 +11,13 @@ import Rain7 from "../assets/icons/animated/rainy-7.svg"; //heavy rain
 import Sun from "../assets/icons/animated/day.svg";
 import Moon from '../assets/icons/animated/night.svg';
 import Snowy from "../assets/icons/animated/snowy-6.svg";
-import Thunder from "../assets/icons/animated/thunder.svg";
+import ThunderStorm from "../assets/icons/animated/thunder.svg";
 import Fog from "../assets/icons/animated/fog.png";
 import Haze from "../assets/icons/animated/haze.png";
 import Mist from "../assets/icons/animated/mist.png";
 import Dust from "../assets/icons/animated/dust.png";
 import Smoke from "../assets/icons/animated/smoke.png";
-import moment from "moment";
+
 
 
 const getIcon = (code) => {
@@ -44,8 +44,10 @@ const getIcon = (code) => {
 			return <img className="Icon" src={Rain5} alt={Rain5} />;
 
 		case 502: //heavy intesity
+
 			return <img className="Icon" src={Rain7} alt={Rain7} />;
 		case 503: // very heavy intesity
+
 			return <img className="Icon" src={Rain6} alt={Rain6} />;
 
 		case 600: //ligth snow
@@ -58,10 +60,13 @@ const getIcon = (code) => {
 			return <img className="Icon" src={Snowy} alt={Snowy} />;
 
 		case 200: //thunderstorm
-			return <img className="Icon" src={Thunder} alt={Thunder} />;
+			return <img className="Icon" src={ThunderStorm} alt={ThunderStorm} />;
 
 		case 201: //thunderstorm
-			return <img className="Icon" src={Thunder} alt={Thunder} />;
+			return <img className="Icon" src={ThunderStorm} alt={ThunderStorm} />;
+
+		case 211: //thunderstorm
+			return <img className="Icon" src={ThunderStorm} alt={ThunderStorm} />;
 
 		case 300: //light intesity drizzle
 			return <img className="Icon" src={Rain2} alt={Rain2} />;

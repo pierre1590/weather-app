@@ -65,23 +65,23 @@ body{
     }
 
     .container{
-      height: 140vh;
+      height: 190vh;
     }
   }
 
   @media only screen and (max-width: 680px) {
     body {
-      height: 400vh;
+      height: 242vh;
     }
 
     .container{
-      height: 230vh;
+      height: 240vh;
     }
   }
 
   @media only screen and (max-width: 750px) {
     body {
-      height: vh;
+      height: 240vh;
     }
 
     .container{
@@ -91,11 +91,11 @@ body{
 
   @media only screen and (max-width: 990px) {
     body {
-      height: 250vh;
+      height: 260vh;
     }
 
     .container{
-      height: 230vh;
+      height: 248vh;
     }
   }
 
