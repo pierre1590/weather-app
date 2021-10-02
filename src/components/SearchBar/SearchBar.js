@@ -10,7 +10,7 @@ function SearchBar({ getCityWeather, changeLocation, isError}){
             <div className="searchbar">
               <Form onSubmit={(e)=>
               getCityWeather(e)}>  
-                <InputGroup className="mb-3 " >
+                <InputGroup className="mb-3" >
                     <FormControl
                         placeholder="Search City..."
                         aria-label="search city"
