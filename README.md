@@ -1,4 +1,4 @@
-![AppVeyor](https://img.shields.io/appveyor/build/pierre1590/weather-app?color=green&style=plastic)
+![GitHub Workflow Status](https://img.shields.io/github/status/pierre1590/weather-app/sfasdf?color=green)
 
 # Getting Started with Create React App
 
