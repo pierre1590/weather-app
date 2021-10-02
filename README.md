@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/status/pierre1590/weather-app/?color=green)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/pierre1590/weather-app/main?color=lime)
 
 # Getting Started with Create React App
 
