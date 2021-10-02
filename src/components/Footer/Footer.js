@@ -4,7 +4,7 @@ const Footer = () => {
 
 return (
     <div className="footer">
-        <p>Created with <IoLogoReact style={{color:'#7fffd4', height:18, width:22,background:'#000'}}/> by Piero Sabino</p>
+        <p>Created with <a href="https://reactjs.org/"><IoLogoReact style={{color:'#7fffd4', height:18, width:22,background:'#000'}}/></a> by Piero Sabino</p>
     </div>
 )
 }

@@ -71,7 +71,9 @@ function App() {
   return (
     <div className="App">
 		{loading ? (
-			<ReactLoading type="spinningBubbles" color="#f03" width="200px" height="110px" />
+			<div style={{marginLeft: '45%'}}>		
+				<ReactLoading type="spinningBubbles" color="#f03" width="200px" height="110px" />
+			</div>
 		) : (
 			<>	
 			{weather && ( 

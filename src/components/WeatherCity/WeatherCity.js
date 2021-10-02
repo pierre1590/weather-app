@@ -19,7 +19,7 @@ function WeatherCity({data}){
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
-                {setIcon(data.iconId)}<br/>
+                  {setIcon(data.iconId)}<br/>
                  <h2>{data.temp}°C</h2>
           </div>
           <div className="other-info">
@@ -28,7 +28,7 @@ function WeatherCity({data}){
                 <span className="info_max">Max: {data.temp_max} °C </span><br/>
                 <span className="info_min">Min: {data.temp_min} °C</span><br/>
             <span>Humidity: {data.humidity}%</span><br/>
-            Wind : {data.wind_speed} km/h - {data.wind_deg}° {Wind(data.wind_deg)} <br/>
+            Wind: {data.wind_speed} km/h - {data.wind_deg}° {Wind(data.wind_deg)} <br/>
             <span>Pressure: {data.pressure} hPa</span><br/>
             <span>Visibility: {data.visibility} Km</span>
           </div> 
