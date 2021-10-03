@@ -22,8 +22,11 @@ import moment from "moment";
 
 
 const getIcon = (code) => {
-	const isDay = '';
-	const iconFor800 = isDay
+	function isDay(timezone){
+		const hours = Number(moment().tz(timezone).format('HH'));
+		return (hours >= 6 && hours <= 18);
+	}
+	const iconFor800 = isDay 
 	?<img className="Icon" src={Sun} alt={Sun} />
 	: <img className="Icon" src={Moon} alt={Moon} />;
 
@@ -83,6 +86,9 @@ const getIcon = (code) => {
 		case 302: //heavy intesity drizzle
 			return <img className="Icon" src={Rain3} alt={Rain3} />;
 
+			case 311: //drizzle
+			return <img className="Icon" src={Rain2} alt={Rain2} />;	
+
 		case 701: //mist
 			return <img className="Icon" src={Mist} alt={Mist} />;
 
@@ -94,6 +100,8 @@ const getIcon = (code) => {
 
 		case 731: //dust
 			return <img className="Icon" src={Dust} alt={Dust} />;
+		case 761: //dust
+			return <img className="Icon" src={Dust} alt={Dust} />;	
 		case 741: //fog
 			return <img className="Icon" src={Fog} alt={Fog} />;
 

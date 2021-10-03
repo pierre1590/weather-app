@@ -8,7 +8,7 @@ function Heart() {
 
 return(
     <div>
-      {favorites}
+      
     
         <IoIosHeartEmpty style={{color:'red',fontSize:'32px'}} onClick={() => setFavorites(0)}/>
         <IoIosHeart style={{color:'red',fontSize:'32px'}} onClick={() => setFavorites(1)}/>
