@@ -1,110 +1,108 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   background: url(./assets/images/background.jpeg);
-  background-size:cover;
-  background-repeat:no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 80vh;
-	width: 100vw;
+  width: 100vw;
 }
 
-.container{
+.container {
   margin: 6% 80% auto;
   width: 40vw;
-  height:70vh ;
+  height: 70vh;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 5px black;
   opacity: 0.8;
   background: white;
-  font-family:'PT Serif', serif;
+  font-family: "PT Serif", serif;
 }
 
-.header{
-  margin:10px;
-  display:flex;
+.header {
+  margin: 10px;
+  display: flex;
   justify-content: space-between;
 }
 
-.favorites{
-  display:flex;
-  height:50px;
-  width:50px;
-  justify-content:flex-start;
+.favorites {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  justify-content: flex-start;
 }
 
-
-.footer{
+.footer {
   margin-left: 65%;
   color: white;
   font-size: 15px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
-.fa-heart{
-  color:red;
+.fa-heart {
+  color: red;
 }
 
-
-  /* Mobile Styles */
-  @media only screen and (max-width: 350px) {
-    body {
-      height: 450vh;
-    }
-
-    .container{
-      height: 350vh;
-    }
+/* Mobile Styles */
+@media only screen and (max-width: 350px) {
+  body {
+    height: 450vh;
   }
 
-  @media only screen and (max-width: 590px) {
-    body {
-      height: 250vh;
-    }
+  .container {
+    height: 350vh;
+  }
+}
 
-    .container{
-      height: 190vh;
-    }
+@media only screen and (max-width: 590px) {
+  body {
+    height: 250vh;
   }
 
-  @media only screen and (max-width: 680px) {
-    body {
-      height: 242vh;
-    }
+  .container {
+    height: 190vh;
+  }
+}
 
-    .container{
-      height: 240vh;
-    }
+@media only screen and (max-width: 680px) {
+  body {
+    height: 242vh;
   }
 
-  @media only screen and (max-width: 750px) {
-    body {
-      height: 240vh;
-    }
+  .container {
+    height: 240vh;
+  }
+}
 
-    .container{
-      height: 235vh;
-    }
+@media only screen and (max-width: 750px) {
+  body {
+    height: 240vh;
   }
 
-  @media only screen and (max-width: 990px) {
-    body {
-      height: 260vh;
-    }
+  .container {
+    height: 235vh;
+  }
+}
 
-    .container{
-      height: 248vh;
-    }
+@media only screen and (max-width: 990px) {
+  body {
+    height: 260vh;
   }
 
-  @media only screen and (min-width: 1024px) {
-    body {
-      height: 73vh;
-    }
-
-    .container{
-      height: 70vh;
-    }
+  .container {
+    height: 248vh;
   }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    height: 73vh;
+  }
+
+  .container {
+    height: 70vh;
+  }
+}
