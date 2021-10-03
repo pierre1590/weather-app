@@ -1,103 +1,102 @@
 .day {
-    flex: 1;
-    font-size: var(--fs-h1);
-    align-self: center;
-    justify-self: center;
+  flex: 1;
+  font-size: var(--fs-h1);
+  align-self: center;
+  justify-self: center;
 }
 .description {
-    flex: 1;
-    font-size: var(--fs-h1);
+  flex: 1;
+  font-size: var(--fs-h1);
 }
 .icon {
-    flex: 3;
+  flex: 3;
 }
 .forecast-title {
-    font-size: 20px;
-    padding: 5px;
-    border-bottom: 3px solid var(--clr-accent);
-    width: 110px;
+  font-size: 20px;
+  padding: 5px;
+  border-bottom: 3px solid var(--clr-accent);
+  width: 110px;
 }
-.forecast-weather-title, .forecast-day {
-    animation: slideUpIn 780ms ease-out;
-    animation-fill-mode: backwards;
+.forecast-weather-title,
+.forecast-day {
+  animation: slideUpIn 780ms ease-out;
+  animation-fill-mode: backwards;
 }
 .forecast-day:nth-child(1) {
-    animation-delay: 100ms;
+  animation-delay: 100ms;
 }
 .forecast-day:nth-child(2) {
-    animation-delay: 125ms;
+  animation-delay: 125ms;
 }
 .forecast-day:nth-child(3) {
-    animation-delay: 150ms;
+  animation-delay: 150ms;
 }
 .forecast-day:nth-child(4) {
-    animation-delay: 175ms;
+  animation-delay: 175ms;
 }
 .forecast-day:nth-child(5) {
-    animation-delay: 200ms;
+  animation-delay: 200ms;
 }
-
 
 @keyframes slideUpIn {
-    0% {
-        opacity: 0;
-        transform: translateY(50%);
-   }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-   }
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
 @media only screen and (min-width: 250px) {
-    .temps{
-        padding:12px;
-    }
+  .temps {
+    padding: 12px;
+  }
 }
 
 @media only screen and (min-width: 320px) {
-    .temps{
-        padding:12px;
-    }
+  .temps {
+    padding: 12px;
+  }
 }
 
 @media only screen and (min-width: 999px) {
-    .forecast-days {
-        padding: 50px 0px;
-        display: flex;
-        flex: 0 1 auto;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 15px;
-   }
-    .forecast-day {
-        text-align: center;
-        margin: 2px;
-        width: 170px;
-        padding-right: 10px;
-        border-right: 2px solid var(--clr-accent);
-   }
-    .forecast-day:nth-child(5) {
-        border-right: none;
-   }
+  .forecast-days {
+    padding: 50px 0px;
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+  }
+  .forecast-day {
+    text-align: center;
+    margin: 2px;
+    width: 170px;
+    padding-right: 10px;
+    border-right: 2px solid var(--clr-accent);
+  }
+  .forecast-day:nth-child(5) {
+    border-right: none;
+  }
 }
 
 @media only screen and (max-width: 999px) {
-    .forecast-days {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-   }
-    .forecast-day {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: space-between;
-        flex: 1 1 auto;
-        border-bottom: 2px solid var(--clr-accent);
-   }
-    .forecast-day:nth-child(5) {
-        border-bottom: none;
-   }
+  .forecast-days {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .forecast-day {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    border-bottom: 2px solid var(--clr-accent);
+  }
+  .forecast-day:nth-child(5) {
+    border-bottom: none;
+  }
 }
