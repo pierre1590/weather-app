@@ -1,13 +1,14 @@
 .city-weather {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  flex: ;
-  text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	flex: ;
+	text-align: center;
+
 }
 
 .townInfo {
-  flex: 3;
+  flex: 3 ;
   padding-right: 10px;
 }
 .townInfo h2 {
@@ -37,9 +38,10 @@
 .weather-units .tempInfo {
   padding-bottom: 20px;
 }
-.weather-units .description {
-  font-size: 25px;
+.weather-units .description{
+  font-size:25px;
 }
+
 
 .weather-units .section-title {
   font-size: var(--fs-h2);
@@ -48,7 +50,7 @@
   padding-bottom: 5px;
 }
 
-.other-info {
+.other-info{
   flex: 3.5;
   font-size: 18px;
 }
@@ -60,12 +62,12 @@
   color: #00a;
 }
 
-.sunrise {
-  width: 25px;
-  height: 25px;
+.sunrise{
+  width:25px;
+  height:25px;
 }
 
-.sunset {
-  width: 25px;
-  height: 25px;
+.sunset{
+  width:25px;
+  height:25px;
 }
