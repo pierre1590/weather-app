@@ -8,7 +8,10 @@ import Wind from '../Wind/Wind';
 import './WeatherCity.css';
 
 function WeatherCity({data}){
-   
+  function isDay(timezone){
+		const hours = Number(moment().tz(timezone).format('HH'));
+		return (hours >= 6 && hours <= 6);
+	}
 
     return (
         <div className="city-weather">

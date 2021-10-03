@@ -17,22 +17,15 @@ import Haze from "../assets/icons/animated/haze.png";
 import Mist from "../assets/icons/animated/mist.png";
 import Dust from "../assets/icons/animated/dust.png";
 import Smoke from "../assets/icons/animated/smoke.png";
-import moment from "moment";
 
 
 
 const getIcon = (code) => {
-	function isDay(timezone){
-		const hours = Number(moment().tz(timezone).format('HH'));
-		return (hours >= 6 && hours <= 18);
-	}
-	const iconFor800 = isDay 
-	?<img className="Icon" src={Sun} alt={Sun} />
-	: <img className="Icon" src={Moon} alt={Moon} />;
-
+	
+	
 	switch (code) {
 		case 800:
-			return iconFor800;
+			return <img className="Icon" src={Sun} alt={Sun} />;
 
 		case 801: //few clouds
 			return <img className="Icon" src={Cloudy} alt={Cloudy} />;
