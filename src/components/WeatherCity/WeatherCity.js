@@ -1,11 +1,12 @@
 import React from "react";
 import moment from "moment";
-import setIcon from '../../utils/setIcon.js';
+
 import Sunrise from '../../assets/images/alba.gif';
 import Sunset from '../../assets/images/tramonto.gif';
 import Heart from '../Heart/Heart';
 import Wind from '../Wind/Wind';
 import './WeatherCity.css';
+import WeatherIcon from "../WeatherIcon/WeatherIcon.js";
 
 function WeatherCity({data}){
   
@@ -21,7 +22,7 @@ function WeatherCity({data}){
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
-                  {setIcon(data.iconId)}<br/>
+                  <WeatherIcon code={data.iconId} timezone={data.timezone}/>
                  <h2>{data.temp}°C</h2>
           </div>
           <div className="other-info">

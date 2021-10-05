@@ -1,7 +1,8 @@
 import React from "react";
 import "./Forecast.css";
 import moment from "moment";
-import getIcon from "../../utils/setIcon";
+
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 function Forecast({ forecast }) {
   return (
@@ -17,7 +18,9 @@ function Forecast({ forecast }) {
                       {moment(item.dt_txt).format("ddd")}
                     </div>
                     <div className="icon">
-                    <div className="icon">{getIcon(item.weather[0].id)}</div>
+                    <div className="icon">
+                      <WeatherIcon code={item.weather[0].id} timezone={item.weather[0].timezone}/>
+                    </div>
                     </div>
                     <div className="temps">
                       <span>{Math.floor(item.main.temp)}°C </span>
