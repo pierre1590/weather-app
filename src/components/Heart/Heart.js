@@ -6,16 +6,10 @@ function Heart() {
 
   return (
     <div>
-      <IoIosHeartEmpty
-        style={{ color: "red", fontSize: "32px" }}
-        onClick={() => setFavorites(0)}
-      />
-      <IoIosHeart
-        style={{ color: "red", fontSize: "32px" }}
-        onClick={() => setFavorites(1)}
-      />
+      <IoIosHeartEmpty style={{color:'red',fontSize:30}}/>
     </div>
-  );
+  )
+  
 }
 
 export default Heart;
