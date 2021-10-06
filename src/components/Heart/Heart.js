@@ -6,8 +6,9 @@ function Heart() {
 
   return (
     <div>
-      <IoIosHeartEmpty style={{color:'red',fontSize:30}}/>
+   
     </div>
+    
   )
   
 }
