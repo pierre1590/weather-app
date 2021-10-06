@@ -22,8 +22,8 @@ import Dust from "../../assets/icons/animated/dust.png";
 import Smoke from "../../assets/icons/animated/smoke.png"
 
 function isDay(timezone) {
-    const hours = Number(moment().tz(timezone).format("HH"));
-    return hours >= 6 && hours <= 18;
+    const hours = Number(moment().utc().add(timezone,'hours').format("HH"));
+    return (hours >= 6 && hours <= 18);
 }
 
 const WeatherIcon = ({code,timezone}) => {
