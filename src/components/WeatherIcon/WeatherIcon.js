@@ -1,5 +1,5 @@
 import React from "react";
-import "moment-timezone";
+
 import moment from "moment";
 
 import Cloudy from "../../assets/icons/animated/cloudy.svg";
