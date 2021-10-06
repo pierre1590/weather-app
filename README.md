@@ -1,7 +1,7 @@
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/pierre1590/weather-app/main?color=lime)
 ![GitHub top language](https://img.shields.io/github/languages/top/pierre1590/weather-app?color=yellow&style=plastic)
 ![GitHub repo size](https://img.shields.io/github/repo-size/pierre1590/weather-app?color=red&logoColor=yellow&style=plastic)
-![GitHub Release Date](https://img.shields.io/github/release-date/pierre1590/weather-app)
+![GitHub last commit](https://img.shields.io/github/last-commit/pierre1590/weather-app)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
