@@ -1,6 +1,5 @@
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/pierre1590/weather-app/main?color=lime)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/status/pierre1590/weather-app/main/main?color=red&logoColor=green&style=plastic)
-
+![GitHub top language](https://img.shields.io/github/languages/top/pierre1590/weather-app?color=yellow&style=plastic)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
