@@ -3,7 +3,7 @@ import moment from "moment";
 
 import Sunrise from '../../assets/images/alba.gif';
 import Sunset from '../../assets/images/tramonto.gif';
-import Heart from '../Heart/Heart';
+
 import Wind from '../Wind/Wind';
 import './WeatherCity.css';
 import WeatherIcon from "../WeatherIcon/WeatherIcon.js";
@@ -18,7 +18,7 @@ function WeatherCity({data}){
                 {data.location}, {data.country}
             </h2>
             <p>{moment().utc().add(data.timezone, 'hours').format('dddd, MMM Do YYYY, h:mm A')}</p>
-           <Heart/>
+           
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
