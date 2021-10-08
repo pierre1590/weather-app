@@ -18,7 +18,7 @@ function WeatherCity({data}){
                 {data.location}, {data.country}
             </h2>
             <p>{moment().utc().add(data.timezone, 'hours').format('dddd, MMM Do YYYY, h:mm A')}</p>
-           <Heart/>
+           <Heart data={data}/>
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>
