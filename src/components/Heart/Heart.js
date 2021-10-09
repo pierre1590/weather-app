@@ -9,7 +9,7 @@ function Heart({data}) {
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'))
     if(previousData){
-        let isAlreadyFavourited = previousData.find(countryObj => countryObj.country = data.country)
+        let isAlreadyFavourited = previousData.find(countryObj => countryObj.name = data.name)
         if(isAlreadyFavourited) {
             setIsHeartSelected(true)
         }
@@ -28,14 +28,14 @@ function Heart({data}) {
             }
         }else {
             let previousData = JSON.parse(localStorage.getItem('favourites'))
-            let newData = previousData.filter(countryObj => countryObj.country !== data.country)
+            let newData = previousData.filter(countryObj => countryObj.name !== data.name)
             localStorage.setItem('favourites', JSON.stringify(newData))
         }
       }else {
           didMount.current=true
       }
 
-  }, [isHeartSelected])
+  }, [data, isHeartSelected])
 
   const toggleHeart = () => {
     setIsHeartSelected(prevState => !prevState)
@@ -43,7 +43,7 @@ function Heart({data}) {
     return(
         <div>
             <div className="heartConainer" onClick={toggleHeart}>
-               {isHeartSelected ? <IoIosHeart/> : <IoIosHeartEmpty/>} 
+               {isHeartSelected ? <IoIosHeart style={{color:'red'}}/> : <IoIosHeartEmpty style={{color:'red'}}/>} 
             </div>
             
         </div>
