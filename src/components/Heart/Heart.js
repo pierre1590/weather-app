@@ -29,7 +29,7 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
             }
         }else {
             let previousData = JSON.parse(localStorage.getItem('favourites'));
-            let newData = previousData.filter(countryObj => (countryObj.location !== data.location));
+            let newData = previousData.filter(countryObj => countryObj.location !== data.location);
             localStorage.setItem('favourites', JSON.stringify(newData));
         }
       }else {
