@@ -20,10 +20,7 @@ function WeatherCity({data, isHeartSelected, setIsHeartSelected}){
                 {data.location}, {data.country}
             </h2>
             <p>{moment().utc().add(data.timezone, 'hours').format('dddd, MMM Do YYYY, h:mm A')}</p>
-
             <Heart data={data} isHeartSelected={isHeartSelected} setIsHeartSelected={setIsHeartSelected}/>
-
-          
           </div>
           <div className="weather-units">
                 <h1 className="description">{data.description}</h1>

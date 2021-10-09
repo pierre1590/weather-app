@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import WeatherCity from "./components/WeatherCity/WeatherCity";
 import Forecast from "./components/Forecast/Forecast";
 import Footer from "./components/Footer/Footer";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, CloseButton } from "react-bootstrap";
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
@@ -18,6 +18,14 @@ function App() {
   const [delay, setDelay] = useState(1000);
   const [loading, setLoading] = useState(true);
   const [isHeartSelected, setIsHeartSelected] = useState(false)
+  const [isFavouritesSelected, setIsFavouritesSelected] = useState(false)
+  const [favInLocal, setIsFavInLocal] = useState(false)
+  
+
+  useEffect(() => {
+    let previousData = JSON.parse(localStorage.getItem('favourites'))
+    previousData && setIsFavInLocal(previousData)
+  }, [isHeartSelected])
 
   useEffect(() => {
     if (!city) {
@@ -61,7 +69,10 @@ function App() {
     event.preventDefault();
     getCityWeather(city);
     getCityForecast(city);
-  };
+  }
+  const handleFavourites = () => {
+    setIsFavouritesSelected(prevState => !prevState)
+  }
 
   return (
     <div className="App">
@@ -80,6 +91,7 @@ function App() {
             <>
               <Container fluid className="container">
                 <div className="header">
+                  <div className="button-parent"> 
                   <Button
                     variant="danger"
                     className="favorites"
@@ -91,10 +103,20 @@ function App() {
                       height:80,
                       color: 'red'
                     }}
-                   
+                    onClick={handleFavourites}
                   >
                     <i className="fas fa-heart"></i>Preferred cities
                   </Button>
+                  {isFavouritesSelected ? <div className="favorites-data">
+                    {
+                      favInLocal ? <ul>
+                      <CloseButton/>
+                        {favInLocal.map((fav, i) => <li key={i}>{fav.location}</li>)}
+                        
+                      </ul> : <span>no fav data</span>
+                    }
+                  </div> : <> </>}
+                  </div>
                   <SearchBar
                     getCityWeather={getSearchWeather}
                     changeLocation={onInputChange}
@@ -105,7 +127,9 @@ function App() {
                   <WeatherCity data={weather} isHeartSelected={isHeartSelected} setIsHeartSelected={setIsHeartSelected}/>
                 </div>
                 <div style={{ marginTop: "12%" }}>
-                   <Forecast forecast={weatherforecast} />
+
+                  <Forecast forecast={weatherforecast} />
+
                 </div>
               </Container>
               <Footer />

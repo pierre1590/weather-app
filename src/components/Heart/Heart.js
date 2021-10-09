@@ -3,9 +3,7 @@ import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io"
 import './Heart.css'
 
 function Heart({data, isHeartSelected, setIsHeartSelected}) {
-//   const [isAlreadyFavourited, setIsAlreadyFavourited] = useState(false)
   const didMount = useRef(false)
-
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'))
     if(previousData){
@@ -45,7 +43,7 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
   }
     return(
         <div>
-            <div className="heartConainer" onClick={toggleHeart}>
+            <div className="heartContainer" onClick={toggleHeart}>
                {(isHeartSelected )? <IoIosHeart style={{color:'red', fontSize:30}} /> : <IoIosHeartEmpty style={{color:'red', fontSize:30}}/>} 
             </div>
         </div>
