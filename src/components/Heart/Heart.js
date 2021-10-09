@@ -7,12 +7,12 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'))
     if(previousData){
-        let isInStorage = previousData.find(countryObj => countryObj.location == data.location)
+        let isInStorage = previousData.find(countryObj => countryObj.location === data.location)
         if(isInStorage) {
             setIsHeartSelected(true)
         }
     }
-  }, [data])
+  }, [data,isHeartSelected, setIsHeartSelected])
 
   useEffect(() => {
       //didmount check ==> do not run function inside it in first render
