@@ -106,3 +106,19 @@ body {
     height: 75vh;
   }
 }
+.button-parent{
+  display: flex;
+}
+.favorites-data {
+  position: absolute;
+  left: 108px;
+  height: 100px;
+  width: 100px;
+  background-color: #ec1b1d;
+  color: #fff;
+  border-radius: 14px;
+}
+
+.favorites-data ul {
+  list-style: none;
+}

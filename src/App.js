@@ -18,6 +18,14 @@ function App() {
   const [delay, setDelay] = useState(1000);
   const [loading, setLoading] = useState(true);
   const [isHeartSelected, setIsHeartSelected] = useState(false)
+  const [isFavouritesSelected, setIsFavouritesSelected] = useState(false)
+  const [favInLocal, setIsFavInLocal] = useState(false)
+  
+
+  useEffect(() => {
+    let previousData = JSON.parse(localStorage.getItem('favourites'))
+    previousData && setIsFavInLocal(previousData)
+  }, [isHeartSelected])
 
   useEffect(() => {
     if (!city) {
@@ -61,7 +69,10 @@ function App() {
     event.preventDefault();
     getCityWeather(city);
     getCityForecast(city);
-  };
+  }
+  const handleFavourites = () => {
+    setIsFavouritesSelected(prevState => !prevState)
+  }
 
   return (
     <div className="App">
@@ -80,6 +91,7 @@ function App() {
             <>
               <Container fluid className="container">
                 <div className="header">
+                  <div className="button-parent"> 
                   <Button
                     variant="danger"
                     className="favorites"
@@ -88,9 +100,18 @@ function App() {
                       border: "0",
                       outlineStyle: "none",
                     }}
+                    onClick={handleFavourites}
                   >
                     <i className="fas fa-heart"></i>
                   </Button>
+                  {isFavouritesSelected ? <div className="favorites-data">
+                    {
+                      favInLocal ? <ul>
+                        {favInLocal.map((fav, i) => <li key={i}>{fav.location}</li>)}
+                      </ul> : <span>no fav data</span>
+                    }
+                  </div> : <> </>}
+                  </div>
                   <SearchBar
                     getCityWeather={getSearchWeather}
                     changeLocation={onInputChange}
@@ -101,7 +122,7 @@ function App() {
                   <WeatherCity data={weather} isHeartSelected={isHeartSelected} setIsHeartSelected={setIsHeartSelected}/>
                 </div>
                 <div style={{ marginTop: "12%" }}>
-                  {/* <Forecast forecast={weatherforecast} /> */}
+                  <Forecast forecast={weatherforecast} />
                 </div>
               </Container>
               <Footer />

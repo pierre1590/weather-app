@@ -3,9 +3,7 @@ import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io"
 import './Heart.css'
 
 function Heart({data, isHeartSelected, setIsHeartSelected}) {
-//   const [isAlreadyFavourited, setIsAlreadyFavourited] = useState(false)
   const didMount = useRef(false)
-
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'))
     if(previousData){
