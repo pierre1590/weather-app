@@ -4,7 +4,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import WeatherCity from "./components/WeatherCity/WeatherCity";
 import Forecast from "./components/Forecast/Forecast";
 import Footer from "./components/Footer/Footer";
-import { Container, Button, CloseButton } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
+import  CloseButton  from "react-bootstrap/CloseButton";
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
@@ -72,6 +73,7 @@ function App() {
   }
   const handleFavourites = () => {
     setIsFavouritesSelected(prevState => !prevState)
+   
   }
 
   return (
@@ -110,8 +112,8 @@ function App() {
                   {isFavouritesSelected ? <div className="favorites-data">
                     {
                       favInLocal ? <ul>
-                      <CloseButton/>
-                        {favInLocal.map((fav, i) => <li key={i}>{fav.location}</li>)}
+                      <CloseButton aria-label="Hide" onClick={setIsFavouritesSelected}/>
+                        {favInLocal.map((fav, i) => <li key={i} >{fav.location}</li>)}
                         
                       </ul> : <span>no fav data</span>
                     }
