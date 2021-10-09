@@ -12,7 +12,7 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
             setIsHeartSelected(true)
         }
     }
-  }, [data,isHeartSelected, setIsHeartSelected])
+  }, [data])
 
   useEffect(() => {
       //didmount check ==> do not run function inside it in first render
