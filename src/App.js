@@ -17,6 +17,7 @@ function App() {
   const [isError, setError] = useState(false);
   const [delay, setDelay] = useState(1000);
   const [loading, setLoading] = useState(true);
+  const [isHeartSelected, setIsHeartSelected] = useState(false)
 
   useEffect(() => {
     if (!city) {
@@ -25,8 +26,9 @@ function App() {
 
     getCityWeather(city)
       .then((setData) => {
-        setWeather(setData);
-        setLoading(false);
+        setWeather(setData)
+        setIsHeartSelected(false)
+        setLoading(false)
         return;
       })
       .catch((error) => {
@@ -41,8 +43,8 @@ function App() {
     }
     getCityForecast(city)
       .then((forecast) => {
-        setForecast(forecast);
-        setError(false);
+        setForecast(forecast)
+        setError(false)
         return;
       })
       .catch((error) => {
@@ -96,10 +98,10 @@ function App() {
                   />
                 </div>
                 <div sytle={{ marginTop: "8%" }}>
-                  <WeatherCity data={weather} />
+                  <WeatherCity data={weather} isHeartSelected={isHeartSelected} setIsHeartSelected={setIsHeartSelected}/>
                 </div>
                 <div style={{ marginTop: "12%" }}>
-                  <Forecast forecast={weatherforecast} />
+                  {/* <Forecast forecast={weatherforecast} /> */}
                 </div>
               </Container>
               <Footer />

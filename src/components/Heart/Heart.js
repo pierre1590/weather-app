@@ -2,19 +2,19 @@ import React, { useState, useEffect, useRef } from "react"
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io"
 import './Heart.css'
 
-function Heart({data}) {
-  const [isHeartSelected, setIsHeartSelected] = useState(false)
+function Heart({data, isHeartSelected, setIsHeartSelected}) {
+//   const [isAlreadyFavourited, setIsAlreadyFavourited] = useState(false)
   const didMount = useRef(false)
-  
+
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'))
     if(previousData){
-        let isAlreadyFavourited = previousData.find(countryObj => countryObj.country = data.country)
-        if(isAlreadyFavourited) {
+        let isInStorage = previousData.find(countryObj => countryObj.location == data.location)
+        if(isInStorage) {
             setIsHeartSelected(true)
         }
     }
-  }, [])
+  }, [data])
 
   useEffect(() => {
       //didmount check ==> do not run function inside it in first render
@@ -24,18 +24,21 @@ function Heart({data}) {
             if(!previousData){
                 localStorage.setItem('favourites', JSON.stringify([data]))
             }else {
-                localStorage.setItem('favourites', JSON.stringify([...previousData, data]))
+                let isInStorage = previousData.find(countryObj => countryObj.location == data.location)
+                if(!isInStorage){
+                    localStorage.setItem('favourites', JSON.stringify([...previousData, data]))
+                }
             }
         }else {
             let previousData = JSON.parse(localStorage.getItem('favourites'))
-            let newData = previousData.filter(countryObj => countryObj.country !== data.country)
+            let newData = previousData.filter(countryObj => countryObj.location !== data.location)
             localStorage.setItem('favourites', JSON.stringify(newData))
         }
       }else {
           didMount.current=true
       }
 
-  }, [isHeartSelected])
+  }, [isHeartSelected, data])
 
   const toggleHeart = () => {
     setIsHeartSelected(prevState => !prevState)
@@ -43,9 +46,8 @@ function Heart({data}) {
     return(
         <div>
             <div className="heartConainer" onClick={toggleHeart}>
-               {isHeartSelected ? <IoIosHeart/> : <IoIosHeartEmpty/>} 
+               {(isHeartSelected )? <IoIosHeart/> : <IoIosHeartEmpty/>} 
             </div>
-            
         </div>
         )
 }
