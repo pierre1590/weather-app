@@ -85,11 +85,15 @@ function App() {
                     className="favorites"
                     style={{
                       background: "transparent",
-                      border: "0",
+                      border: '1px dotted #f00',
                       outlineStyle: "none",
+                      width:130,
+                      height:80,
+                      color: 'red'
                     }}
+                   
                   >
-                    <i className="fas fa-heart"></i>
+                    <i className="fas fa-heart"></i>Preferred cities
                   </Button>
                   <SearchBar
                     getCityWeather={getSearchWeather}
@@ -101,7 +105,7 @@ function App() {
                   <WeatherCity data={weather} isHeartSelected={isHeartSelected} setIsHeartSelected={setIsHeartSelected}/>
                 </div>
                 <div style={{ marginTop: "12%" }}>
-                  {/* <Forecast forecast={weatherforecast} /> */}
+                   <Forecast forecast={weatherforecast} />
                 </div>
               </Container>
               <Footer />

@@ -30,8 +30,6 @@ body {
 
 .favorites {
   display: flex;
-  height: 50px;
-  width: 50px;
   justify-content: flex-start;
 }
 
@@ -55,6 +53,8 @@ body {
   .container {
     height: 350vh;
   }
+
+  
 }
 
 @media only screen and (max-width: 590px) {
@@ -99,10 +99,10 @@ body {
 
 @media only screen and (min-width: 1024px) {
   body {
-    height: 75vh;
+    height: 82vh;
   }
 
   .container {
-    height: 75vh;
+    height: 70vh;
   }
 }
