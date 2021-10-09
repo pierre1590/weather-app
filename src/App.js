@@ -121,7 +121,7 @@ const handleLocationClick = (city) => {
                     {
                       favInLocal ? <ul>
                       <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', fontSize:'30px'}} onClick={() => handleLocationClick(fav.location)}>{fav.location}</li>)}
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', fontSize:'30px', }} onClick={() => handleLocationClick(fav.location)}>{fav.location}</li>)}
                         
                       </ul> : <span>no fav data</span>
                     }

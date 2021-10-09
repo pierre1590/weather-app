@@ -118,11 +118,14 @@ body {
   background-color: #ec1b1d;
   color: #fff;
   border-radius: 15px;
-  
 }
 
 
 .favorites-data ul {
- 
   list-style: none;
+}
+
+.favorites-data ul li :hover{
+  background-color: #00f;
+  color: #001;
 }
