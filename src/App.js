@@ -76,6 +76,11 @@ function App() {
    
   }
 
+const handleLocationClick = (city) => {
+  console.log(city)
+  setIsFavouritesSelected(false);
+}
+
   return (
     <div className="App">
       {loading ? (
@@ -112,8 +117,8 @@ function App() {
                   {isFavouritesSelected ? <div className="favorites-data">
                     {
                       favInLocal ? <ul>
-                      <CloseButton aria-label="Hide" onClick={setIsFavouritesSelected}/>
-                        {favInLocal.map((fav, i) => <li key={i} >{fav.location}</li>)}
+                      <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', fontSize:20}} onClick={(fav) => handleLocationClick (fav.city)}><span>{fav.location}</span></li>)}
                         
                       </ul> : <span>no fav data</span>
                     }
