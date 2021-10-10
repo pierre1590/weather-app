@@ -25,3 +25,7 @@
   transition: all 0.3s ease;
   font-size: 15px;
 }
+
+Button{
+  outline-style: none;
+}
