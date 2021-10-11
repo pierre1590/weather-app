@@ -6,21 +6,21 @@ import Forecast from "./components/Forecast/Forecast";
 import Footer from "./components/Footer/Footer";
 import { Container, Button } from "react-bootstrap";
 import  CloseButton  from "react-bootstrap/CloseButton";
-import { getCityForecast, getCityWeather } from "./utils/fetchData";
+import { getCityForecast, getCityWeather, useGeoLocation } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [weather, setWeather] = useState([])
-  const [weatherforecast, setForecast] = useState("")
-  const [city, setCity] = useState("Turi")
-  const [isError, setError] = useState(false)
-  const [delay, setDelay] = useState(1000)
-  const [loading, setLoading] = useState(true)
-  const [isHeartSelected, setIsHeartSelected] = useState(false)
-  const [isFavouritesSelected, setIsFavouritesSelected] = useState(false)
-  const [favInLocal, setIsFavInLocal] = useState(false)
+  const [weather, setWeather] = useState([]);
+  const [weatherforecast, setForecast] = useState("");
+  const [city, setCity] = useState('Turi');
+  const [isError, setError] = useState(false);
+  const [delay, setDelay] = useState(1000);
+  const [loading, setLoading] = useState(true);
+  const [isHeartSelected, setIsHeartSelected] = useState(false);
+  const [isFavouritesSelected, setIsFavouritesSelected] = useState(false);
+  const [favInLocal, setIsFavInLocal] = useState(false);
   
 
   useEffect(() => {
@@ -31,35 +31,35 @@ function App() {
   const handleCityWeather = (city) => {
     getCityWeather(city)
     .then((setData) => {
-      setWeather(setData)
-      setIsHeartSelected(false)
-      setLoading(false)
+      setWeather(setData);
+      setIsHeartSelected(false);
+      setLoading(false);
     })
     .catch((error) => {
-      setError(true)
+      setError(true);
     })
   }
 
   const handleForeCast = (city) => {
     getCityForecast(city)
     .then((forecast) => {
-      setForecast(forecast)
-      setError(false)
+      setForecast(forecast);
+      setError(false);
     })
     .catch((error) => {
-      setError(true)
+      setError(true);
     })
   }
   useEffect(() => {
     if (!city) {
-      return
+      return;
     }
     handleCityWeather(city)
   }, [city, isError])
 
   useEffect(() => {
     if (!city) {
-      return
+      return;
     }
     handleForeCast(city)
   }, [city, isError])
@@ -72,6 +72,7 @@ function App() {
     event.preventDefault();
     getCityWeather(city);
     getCityForecast(city);
+    
   }
   const handleFavourites = () => {
     setIsFavouritesSelected(prevState => !prevState);
@@ -120,8 +121,8 @@ const handleLocationClick = (location) => {
                     {
                       favInLocal ? <ul>
                       <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location)}>{fav.location}</li>)}
-                      </ul> : <span>no fav data</span>
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location)}>{fav.location}, {fav.country}</li>)}
+                      </ul> : <span>No cities</span>
                     }
                   </div> : <> </>}
                   </div>

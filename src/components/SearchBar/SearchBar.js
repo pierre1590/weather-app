@@ -18,7 +18,7 @@ function SearchBar({ getCityWeather, changeLocation, isError }) {
               changeLocation(e.target.value);
             }}
           />
-          <Button variant="primary" id="button-addon2" style={{borderRadius:' 0 10px 10px 0 '}}>
+          <Button variant="primary" id="button-addon2" style={{borderRadius:' 0 10px 10px 0 '}} >
             <i className="fas fa-search"></i>
           </Button>
           <br />

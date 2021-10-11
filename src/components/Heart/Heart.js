@@ -7,7 +7,7 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'));
     if(previousData){
-        let isInStorage = previousData.find(countryObj => countryObj.location === data.location);
+        let isInStorage = previousData.find(countryObj => countryObj.location ===  data.location);
         if(isInStorage) {
             setIsHeartSelected(true);
         }
@@ -25,6 +25,7 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
                 let isInStorage = previousData.find(countryObj => countryObj.location === data.location);
                 if(!isInStorage){
                     localStorage.setItem('favourites', JSON.stringify([...previousData, data]));
+                    
                 }
             }
         }else {
