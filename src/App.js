@@ -78,8 +78,9 @@ function App() {
   }
 
 const handleLocationClick = (location) => {
-  getSearchWeather(location)
-  setIsFavouritesSelected(false)
+  getCityWeather(location);
+  getCityForecast(location);
+  setIsFavouritesSelected(false);
 }
 
   return (
