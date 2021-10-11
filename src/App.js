@@ -64,22 +64,22 @@ function App() {
     handleForeCast(city)
   }, [city, isError])
 
-  const debouncedSearchTerm = useDebounce((value) => setCity(value), delay)
+  const debouncedSearchTerm = useDebounce((value) => setCity(value), delay);
 
-  const onInputChange = (value) => debouncedSearchTerm(value)
+  const onInputChange = (value) => debouncedSearchTerm(value);
 
   const getSearchWeather = (event) => {
-    event.preventDefault()
-    getCityWeather(city)
-    getCityForecast(city)
+    event.preventDefault();
+    getCityWeather(city);
+    getCityForecast(city);
   }
   const handleFavourites = () => {
-    setIsFavouritesSelected(prevState => !prevState)
+    setIsFavouritesSelected(prevState => !prevState);
   }
 
 const handleLocationClick = (location) => {
-  getCityWeather(location);
-  getCityForecast(location);
+  handleCityWeather(location);
+  handleForeCast(location);
   setIsFavouritesSelected(false);
 }
 
