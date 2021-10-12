@@ -6,7 +6,7 @@ import Forecast from "./components/Forecast/Forecast";
 import Footer from "./components/Footer/Footer";
 import { Container, Button } from "react-bootstrap";
 import  CloseButton  from "react-bootstrap/CloseButton";
-import { getCityForecast, getCityWeather, useGeoLocation } from "./utils/fetchData";
+import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -91,7 +91,7 @@ const handleLocationClick = (location) => {
           <ReactLoading
             type="spinningBubbles"
             color="#f03"
-            width="200px"
+            width="250px"
             height="110px"
           />
         </div>
@@ -120,8 +120,8 @@ const handleLocationClick = (location) => {
                   {isFavouritesSelected ? <div className="favorites-data">
                     {
                       favInLocal ? <ul>
-                      <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location)}>{fav.location}, {fav.country}</li>)}
+                        <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location)}>{fav.location}, {fav.country}<Button style={{background:'transparent', width:30, height:35, border:'none',outlineStyle:'none'}} onClick><i className="fas fa-trash-alt"></i></Button></li>)}
                       </ul> : <span>No cities</span>
                     }
                   </div> : <> </>}
@@ -136,9 +136,7 @@ const handleLocationClick = (location) => {
                   <WeatherCity data={weather} isHeartSelected={isHeartSelected} setIsHeartSelected={setIsHeartSelected}/>
                 </div>
                 <div style={{ marginTop: "12%" }}>
-
                   <Forecast forecast={weatherforecast} />
-
                 </div>
               </Container>
               <Footer />
