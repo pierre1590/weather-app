@@ -6,9 +6,6 @@ function SearchBar({ getCityWeather, changeLocation, isError }) {
     <div className="searchbar">
       <Form onSubmit={(e) => getCityWeather(e)}>
         <InputGroup className="mb-3">
-        <Button variant="primary" id="button-addon2" style={{borderRadius:'10px 0 0 10px'}}>
-            <i className="fas fa-map-marker-alt"></i>
-          </Button>
           <FormControl
             placeholder="Search City..."
             aria-label="search city"

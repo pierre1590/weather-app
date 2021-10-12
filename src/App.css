@@ -74,14 +74,10 @@ body {
   transform: scale(0.95);
 }
 
-.fa-trash-alt{
-  color: #000;
-  outline-style:none;
-}
+ 
 
- .fa-trash-alt:hover{
-  color:#fff;
-}
+
+
 
 /* Mobile Styles */
 @media only screen and (max-width: 350px) {
