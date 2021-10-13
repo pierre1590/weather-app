@@ -87,9 +87,10 @@ const handleLocationClick = (location,country) => {
 }
 
 //REMOVE SINGLE CITY FROM FAVOURITES
-const handleRemoveCity = (location) => {
-  setIsHeartSelected(prevState => !prevState)
-}
+const handleRemoveCity = () => {
+  setIsHeartSelected(prevState => !prevState);
+  setIsFavInLocal();
+} 
 
   return (
     <div className="App">

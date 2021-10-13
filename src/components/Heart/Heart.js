@@ -43,7 +43,8 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
   }, [isHeartSelected, data])
 
   const toggleHeart = () => {
-    setIsHeartSelected(prevState => !prevState)
+    setIsHeartSelected(prevState => !prevState);
+    
   }
     return(
         <div>
