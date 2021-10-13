@@ -9,6 +9,7 @@ import  CloseButton  from "react-bootstrap/CloseButton";
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
+import CityData from "./city.list.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
   const handleCityWeather = (city) => {
     getCityWeather(city)
     .then((setData) => {
+      console.log(setData);
       setWeather(setData);
       setIsHeartSelected(false);
       setLoading(false);
@@ -78,12 +80,16 @@ function App() {
     setIsFavouritesSelected(prevState => !prevState);
   }
 
-const handleLocationClick = (location) => {
-  handleCityWeather(location);
-  handleForeCast(location);
+const handleLocationClick = (location,country) => {
+  handleCityWeather(location+','+country);
+  handleForeCast(location+','+country);
   setIsFavouritesSelected(false);
 }
 
+//REMOVE SINGLE CITY FROM FAVOURITES
+const handleRemoveCity = (location) => {
+   localStorage.removeItem(location);
+}
   return (
     <div className="App">
       {loading ? (
@@ -121,7 +127,7 @@ const handleLocationClick = (location) => {
                     {
                       favInLocal ? <ul>
                         <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location)}>{fav.location}, {fav.country} </li>)}
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={() => handleRemoveCity()}> <i className="far fa-trash-alt"></i></Button> </li>)}
                       </ul> : <span>No cities</span>
                     }
                   </div> : <> </>}

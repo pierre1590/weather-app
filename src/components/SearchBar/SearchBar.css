@@ -1,4 +1,4 @@
-.searchbar {
+ .searchbar {
   display: flex;
   justify-content: flex-end;
 }
@@ -25,5 +25,4 @@
   transition: all 0.3s ease;
   font-size: 15px;
 }
-
-
+ 
