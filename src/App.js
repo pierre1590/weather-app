@@ -15,7 +15,7 @@ function App() {
  
   const [weather, setWeather] = useState([]);
   const [weatherforecast, setForecast] = useState("");
-  const [city, setCity] = useState('Turi');
+  const [city, setCity] = useState("Turi");
   const [isError, setError] = useState(false);
   const [delay, setDelay] = useState(1000);
   const [loading, setLoading] = useState(true);
@@ -29,12 +29,14 @@ function App() {
     previousData && setIsFavInLocal(previousData)
   }, [isHeartSelected])
 
-  const handleCityWeather = () => {
+  const handleCityWeather = (city) => {
     getCityWeather(city)
     .then((setData) => {
+      console.log(setData)
       setWeather(setData);
       setIsHeartSelected(false);
       setLoading(false);
+      return;
     })
     .catch((error) => {
       setError(true);
@@ -44,7 +46,6 @@ function App() {
   const handleForeCast = (city) => {
     getCityForecast(city)
     .then((forecast) => {
-      
       setForecast(forecast);
       setError(false);
     })
@@ -88,7 +89,6 @@ const handleLocationClick = (location,country) => {
   handleForeCast(location+','+country);
   setIsFavouritesSelected(false);
 }
-
 
 
   return (
