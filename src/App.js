@@ -33,7 +33,7 @@ function App() {
   const handleCityWeather = () => {
     getCityWeather(city)
     .then((setData) => {
-      console.log(setData)
+      
       setWeather(setData);
       setIsHeartSelected(false);
       setLoading(false);
@@ -47,7 +47,7 @@ function App() {
   const handleForeCast = (city) => {
     getCityForecast(city)
     .then((forecast) => {
-      console.log(forecast);
+      
       setForecast(forecast);
       setError(false);
     })
@@ -92,11 +92,7 @@ const handleLocationClick = (location,country) => {
   setIsFavouritesSelected(false);
 }
 
-//REMOVE SINGLE CITY FROM FAVOURITES
-const handleRemoveCity = () => {
-  setIsHeartSelected(prevState => !prevState);
-  setIsFavInLocal();
-} 
+
 
   return (
     <div className="App">
