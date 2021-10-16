@@ -9,7 +9,6 @@ import  CloseButton  from "react-bootstrap/CloseButton";
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
-import CityData from "./city.list.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -138,7 +137,7 @@ const handleLocationClick = (location,country) => {
                     getCityWeather={getSearchWeather}
                     changeLocation={onInputChange}
                     isError={isError}
-                    data={CityData}
+                    
                   />
                 </div>
                 <div sytle={{ marginTop: "8%" }}>
