@@ -33,11 +33,9 @@ function App() {
   const handleCityWeather = () => {
     getCityWeather(city)
     .then((setData) => {
-      
       setWeather(setData);
       setIsHeartSelected(false);
       setLoading(false);
-
     })
     .catch((error) => {
       setError(true);
@@ -131,7 +129,7 @@ const handleLocationClick = (location,country) => {
                     {
                       favInLocal ? <ul>
                         <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={() => handleRemoveCity()}> <i className="far fa-trash-alt"></i></Button> </li>)}
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}}> <i className="far fa-trash-alt"></i></Button> </li>)}
                       </ul> : <span>No cities</span>
                     }
                   </div> : <> </>}
