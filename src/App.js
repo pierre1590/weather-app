@@ -9,10 +9,11 @@ import  CloseButton  from "react-bootstrap/CloseButton";
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
-
+import CityData from "./city.list.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+ 
   const [weather, setWeather] = useState([]);
   const [weatherforecast, setForecast] = useState("");
   const [city, setCity] = useState('Turi');
@@ -22,20 +23,21 @@ function App() {
   const [isHeartSelected, setIsHeartSelected] = useState(false);
   const [isFavouritesSelected, setIsFavouritesSelected] = useState(false);
   const [favInLocal, setIsFavInLocal] = useState(false);
-  
+
 
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'))
     previousData && setIsFavInLocal(previousData)
   }, [isHeartSelected])
 
-  const handleCityWeather = (city) => {
+  const handleCityWeather = () => {
     getCityWeather(city)
     .then((setData) => {
-      console.log(setData);
+      console.log(setData)
       setWeather(setData);
       setIsHeartSelected(false);
       setLoading(false);
+
     })
     .catch((error) => {
       setError(true);
@@ -45,6 +47,7 @@ function App() {
   const handleForeCast = (city) => {
     getCityForecast(city)
     .then((forecast) => {
+      console.log(forecast);
       setForecast(forecast);
       setError(false);
     })
@@ -73,9 +76,12 @@ function App() {
   const getSearchWeather = (event) => {
     event.preventDefault();
     getCityWeather(city);
-    getCityForecast(city);
-    
+    getCityForecast(city); 
   }
+
+
+  
+
   const handleFavourites = () => {
     setIsFavouritesSelected(prevState => !prevState);
   }
@@ -138,6 +144,7 @@ const handleRemoveCity = () => {
                     getCityWeather={getSearchWeather}
                     changeLocation={onInputChange}
                     isError={isError}
+                    data={CityData}
                   />
                 </div>
                 <div sytle={{ marginTop: "8%" }}>

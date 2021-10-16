@@ -8,6 +8,7 @@ function SearchBar({ getCityWeather, changeLocation, isError }) {
     <div className="searchbar">
       <Form onSubmit={(e) => getCityWeather()}>
         <InputGroup className="mb-3">
+        
           <FormControl
            style={{border: '1px solid #03a',padding:'2px'}}
             placeholder="Search City..."
