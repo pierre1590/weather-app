@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io"
 import './Heart.css'
 
@@ -46,6 +46,10 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
     setIsHeartSelected(prevState => !prevState);
     
   }
+
+  
+
+
     return(
         <div>
             <div className="heartContainer" onClick={toggleHeart}>

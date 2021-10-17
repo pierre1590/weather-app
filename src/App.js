@@ -15,7 +15,7 @@ function App() {
  
   const [weather, setWeather] = useState([]);
   const [weatherforecast, setForecast] = useState("");
-  const [city, setCity] = useState("Turi");
+  const [city, setCity] = useState('Turi');
   const [isError, setError] = useState(false);
   const [delay, setDelay] = useState(1000);
   const [loading, setLoading] = useState(true);
@@ -89,7 +89,10 @@ const handleLocationClick = (location,country) => {
   handleForeCast(location+','+country);
   setIsFavouritesSelected(false);
 }
-
+const removeFavourite = () => {
+  setIsHeartSelected(prevState => !prevState);
+  setIsFavInLocal();
+}
 
   return (
     <div className="App">
@@ -128,7 +131,7 @@ const handleLocationClick = (location,country) => {
                     {
                       favInLocal ? <ul>
                         <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={()=> alert('Function not yet implemented.')}> <i className="far fa-trash-alt"></i></Button> </li>)}
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={()=> removeFavourite()}> <i className="far fa-trash-alt"></i></Button> </li>)}
                       </ul> : <span>No cities</span>
                     }
                   </div> : <> </>}
