@@ -89,9 +89,10 @@ const handleLocationClick = (location,country) => {
   handleForeCast(location+','+country);
   setIsFavouritesSelected(false);
 }
-const removeFavourite = () => {
+
+const removeFavourite = (param) => {
+  //add function to remove item based on its param in localStorage
   setIsHeartSelected(prevState => !prevState);
-  setIsFavInLocal();
 }
 
   return (
@@ -131,7 +132,7 @@ const removeFavourite = () => {
                     {
                       favInLocal ? <ul>
                         <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={()=> removeFavourite()}> <i className="far fa-trash-alt"></i></Button> </li>)}
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={()=> alert('Function not yet implemented.')}> <i className="far fa-trash-alt"></i></Button> </li>)}
                       </ul> : <span>No cities</span>
                     }
                   </div> : <> </>}
