@@ -22,7 +22,7 @@ function App() {
   const [isHeartSelected, setIsHeartSelected] = useState(false);
   const [isFavouritesSelected, setIsFavouritesSelected] = useState(false);
   const [favInLocal, setIsFavInLocal] = useState(false);
-
+  
 
   useEffect(() => {
     let previousData = JSON.parse(localStorage.getItem('favourites'))
@@ -90,9 +90,8 @@ const handleLocationClick = (location,country) => {
   setIsFavouritesSelected(false);
 }
 
-const removeFavourite = (param) => {
-  //add function to remove item based on its param in localStorage
-  setIsHeartSelected(prevState => !prevState);
+const removeFavourite = (id) => {
+    setIsHeartSelected(prevState => !prevState);
 }
 
   return (
@@ -132,7 +131,7 @@ const removeFavourite = (param) => {
                     {
                       favInLocal ? <ul>
                         <CloseButton aria-label="Hide" style={{margin:'2px', borderRadius:'8px'}} onClick={() => setIsFavouritesSelected (false)}/>
-                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={()=> alert('Function not yet implemented.')}> <i className="far fa-trash-alt"></i></Button> </li>)}
+                        {favInLocal.map((fav, i) => <li key={i} style={{cursor:'pointer', }} onClick={() => handleLocationClick(fav.location,fav.country)}>{fav.location}, {fav.country} <Button style={{background:'transparent', color:'#f01', border:'none'}} onClick={()=>removeFavourite()}> <i className="far fa-trash-alt"></i></Button> </li>)}
                       </ul> : <span>No cities</span>
                     }
                   </div> : <> </>}
