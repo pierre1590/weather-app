@@ -90,9 +90,9 @@ const handleLocationClick = (location,country) => {
   setIsFavouritesSelected(false);
 }
 
-const removeFavourite = (city) => {
+const removeFavourite = (data) => {
     let previousData = JSON.parse(localStorage.getItem('favourites'));
-    let newData = previousData.filter(countryObj => countryObj.city !== city);
+    let newData = previousData.filter(countryObj => countryObj.location !== data.location);
     setIsFavInLocal(newData);
 }
 
