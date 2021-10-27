@@ -32,7 +32,6 @@ function App() {
   const handleCityWeather = (city) => {
     getCityWeather(city)
     .then((setData) => {
-      console.log(setData)
       setWeather(setData);
       setIsHeartSelected(false);
       setLoading(false);
@@ -91,10 +90,10 @@ const handleLocationClick = (location,country) => {
 }
 
  const removeFavourite = (data) => {
-   console.log(data)
     let previousData = JSON.parse(localStorage.getItem('favourites'));
-    let newData = previousData.filter(countryObj => countryObj.location !== data.location);
-    setIsFavInLocal = localStorage.setItem('favourites',JSON.stringify(newData));
+    let newData = previousData.filter(countryObj => countryObj.location !== data);
+    localStorage.setItem('favourites',JSON.stringify(newData));
+    setIsFavInLocal(newData)
 }
  
   return (

@@ -11,7 +11,6 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
         if(isInStorage) {
             setIsHeartSelected(true);
         }
-        console.log(previousData);
     }
   }, [data])
 
@@ -34,7 +33,6 @@ function Heart({data, isHeartSelected, setIsHeartSelected}) {
             let previousData = JSON.parse(localStorage.getItem('favourites'));
             let newData = previousData.filter(countryObj => countryObj.location !== data.location);
             localStorage.setItem('favourites', JSON.stringify(newData));
-            console.log(newData);
         }
       }else {
           didMount.current=true
