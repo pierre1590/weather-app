@@ -14,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
  
   const [weather, setWeather] = useState([]);
+  
   const [weatherforecast, setForecast] = useState("");
   const [city, setCity] = useState('Turi');
   const [isError, setError] = useState(false);
@@ -33,6 +34,7 @@ function App() {
     getCityWeather(city)
     .then((setData) => {
       setWeather(setData);
+      
       setIsHeartSelected(false);
       setLoading(false);
       return;
@@ -146,7 +148,7 @@ const handleLocationClick = (location,country) => {
                   />
                 </div>
                 <div sytle={{ marginTop: "8%" }}>
-                  <WeatherCity data={weather} isHeartSelected={isHeartSelected} setIsHeartSelected={setIsHeartSelected}/>
+                  <WeatherCity data={weather} isHeartSelected={isHeartSelected}  setIsHeartSelected={setIsHeartSelected}/>
                 </div>
                 <div style={{ marginTop: "12%" }}>
                   <Forecast forecast={weatherforecast} />

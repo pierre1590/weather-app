@@ -11,7 +11,7 @@ import Heart from "../Heart/Heart";
 
 
 
-function WeatherCity({data, isHeartSelected, setIsHeartSelected}){
+function WeatherCity({data,  isHeartSelected, setIsHeartSelected}){
 
     return (
         <div className="city-weather">
@@ -27,6 +27,7 @@ function WeatherCity({data, isHeartSelected, setIsHeartSelected}){
                   <WeatherIcon code={data.iconId} timezone={data.timezone}/>
                  <h2>{data.temp}°C</h2>
           </div>
+         
           <div className="other-info">
             <img src={Sunrise} alt="Sunrise" className="sunrise"/>  {moment.unix(data.sunrise).utc().add(data.timezone,'hours').format('hh:mm A')}<br/>
             <img src={Sunset} alt="Sunset" className="sunset"/>  {moment.unix(data.sunset).utc().add(data.timezone,'hours').format('hh:mm A')}<br/>

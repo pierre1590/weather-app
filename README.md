@@ -3,6 +3,11 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/pierre1590/weather-app?color=red&logoColor=yellow&style=plastic)
 ![GitHub last commit](https://img.shields.io/github/last-commit/pierre1590/weather-app)
 ![GitHub Repo stars](https://img.shields.io/github/stars/pierre1590/weather-app?color=blue&style=social)
+# Weather 
+<img src="https://i.ibb.co/c8zbCmm/App-weather.jpg" alt="Image weather app">
+The app created allows you to search and show the weather of a location.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
