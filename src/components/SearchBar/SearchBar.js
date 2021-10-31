@@ -9,7 +9,7 @@ function SearchBar({ getCityWeather, isError,data }) {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
-      console.log(value.title.toLowerCase().includes(searchWord.toLowerCase()));
+      return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
 
     if (searchWord === "") {
