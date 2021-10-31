@@ -31,17 +31,7 @@ function SearchBar({ getCityWeather, isError,data }) {
             autoComplete="true"
             onChange={handleFilter}
           />
-           {filteredData.length != 0 && (
-        <div className="results">
-          {filteredData.slice(0, 15).map((value, key) => {
-            return (
-              <a className="dataItem" href={value.name} target="_blank">
-                <p>{value.name} </p>
-              </a>
-            );
-          })}
-        </div>
-      )}
+          
           <Button variant="primary" id="button-addon2" style={{border: '1px solid #03a',borderRadius:' 0 10px 10px 0 ', backgroundColor: 'transparent', color:'#05a' }} >
             <i className="fas fa-search"></i>
           </Button>
@@ -53,6 +43,17 @@ function SearchBar({ getCityWeather, isError,data }) {
             </span>
           </label>
         ) : null}
+        {filteredData.length != 0 && (
+            <div className="results">
+              {filteredData.slice(0, 35).map((value, key) => {
+                 return (
+                  <a className="dataItem" href={value.name} >
+                    <p>{value.name} </p>
+                  </a>
+                );
+               })}
+        </div>
+      )}
       </Form>
     </div>
   );

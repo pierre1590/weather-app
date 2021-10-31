@@ -69,10 +69,10 @@ function App() {
     handleForeCast(city)
   }, [city, isError])
 
- /*  const debouncedSearchTerm = useDebounce((value) => setCity(value), delay);
+   const debouncedSearchTerm = useDebounce((value) => setCity(value), delay);
 
-  const onInputChange = (value) => debouncedSearchTerm(value); */
-
+  const onInputChange = (value) => debouncedSearchTerm(value); 
+ 
   const getSearchWeather = (event) => {
     event.preventDefault();
     getCityWeather(city);
@@ -143,7 +143,7 @@ const handleLocationClick = (location,country) => {
                   </div>
                   <SearchBar
                     getCityWeather={getSearchWeather}
-                    // changeLocation={onInputChange}
+                    changeLocation={onInputChange}
                     isError={isError}
                     data={cityData}
                   />
