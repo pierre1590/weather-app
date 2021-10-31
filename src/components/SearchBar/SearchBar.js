@@ -1,8 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import { InputGroup, FormControl, Button, Form } from "react-bootstrap";
 
-function SearchBar({ getCityWeather, changeLocation, isError }) {
- 
+function SearchBar({ getCityWeather, isError,data }) {
+   const [filteredData, setFilteredData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
+
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    setWordEntered(searchWord);
+    const newFilter = data.filter((value) => {
+      console.log(value.title.toLowerCase().includes(searchWord.toLowerCase()));
+    });
+
+    if (searchWord === "") {
+      setFilteredData([]);
+    } else {
+      setFilteredData(newFilter);
+    }
+  };
   
   return (
     <div className="searchbar">
@@ -14,10 +29,19 @@ function SearchBar({ getCityWeather, changeLocation, isError }) {
             aria-label="search city"
             aria-describedby="basic-addon2"
             autoComplete="true"
-            onChange={(e) => {
-              changeLocation(e.target.value);
-            }}
+            onChange={handleFilter}
           />
+           {filteredData.length != 0 && (
+        <div className="results">
+          {filteredData.slice(0, 15).map((value, key) => {
+            return (
+              <a className="dataItem" href={value.name} target="_blank">
+                <p>{value.name} </p>
+              </a>
+            );
+          })}
+        </div>
+      )}
           <Button variant="primary" id="button-addon2" style={{border: '1px solid #03a',borderRadius:' 0 10px 10px 0 ', backgroundColor: 'transparent', color:'#05a' }} >
             <i className="fas fa-search"></i>
           </Button>

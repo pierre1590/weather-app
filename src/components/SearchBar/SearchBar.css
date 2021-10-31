@@ -3,6 +3,7 @@
   justify-content: flex-end;
 }
 
+
 .label {
   position: absolute;
   bottom: 0px;
@@ -16,6 +17,10 @@
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+.results{
+  border-radius:20px;
 }
 
 .error {

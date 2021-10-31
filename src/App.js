@@ -9,6 +9,7 @@ import  CloseButton  from "react-bootstrap/CloseButton";
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
+import cityData from "./city.list.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -68,9 +69,9 @@ function App() {
     handleForeCast(city)
   }, [city, isError])
 
-  const debouncedSearchTerm = useDebounce((value) => setCity(value), delay);
+ /*  const debouncedSearchTerm = useDebounce((value) => setCity(value), delay);
 
-  const onInputChange = (value) => debouncedSearchTerm(value);
+  const onInputChange = (value) => debouncedSearchTerm(value); */
 
   const getSearchWeather = (event) => {
     event.preventDefault();
@@ -142,9 +143,9 @@ const handleLocationClick = (location,country) => {
                   </div>
                   <SearchBar
                     getCityWeather={getSearchWeather}
-                    changeLocation={onInputChange}
+                    // changeLocation={onInputChange}
                     isError={isError}
-                    
+                    data={cityData}
                   />
                 </div>
                 <div sytle={{ marginTop: "8%" }}>
