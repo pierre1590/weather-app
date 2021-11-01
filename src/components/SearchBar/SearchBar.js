@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { InputGroup, FormControl, Button, Form } from "react-bootstrap";
 
-function SearchBar({ getCityWeather, isError,data }) {
+function SearchBar({ getCityWeather, isError,changeLocation,data }) {
    const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
@@ -29,7 +29,6 @@ function SearchBar({ getCityWeather, isError,data }) {
             aria-label="search city"
             aria-describedby="basic-addon2"
             autoComplete="true"
-            onChange={handleFilter}
           />
           
           <Button variant="primary" id="button-addon2" style={{border: '1px solid #03a',borderRadius:' 0 10px 10px 0 ', backgroundColor: 'transparent', color:'#05a' }} >
@@ -45,9 +44,9 @@ function SearchBar({ getCityWeather, isError,data }) {
         ) : null}
         {filteredData.length != 0 && (
             <div className="results">
-              {filteredData.slice(0, 35).map((value, key) => {
+              {filteredData.slice(0, 15).map((value, key) => {
                  return (
-                  <a className="dataItem" href={value.name} >
+                  <a className="dataItem" href={value.name} onChange={(e) =>changeLocation(handleFilter)}  >
                     <p>{value.name} </p>
                   </a>
                 );

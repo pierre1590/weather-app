@@ -142,6 +142,7 @@ const handleLocationClick = (location,country) => {
                   </div> : <> </>}
                   </div>
                   <SearchBar
+                    className="searcbar"
                     getCityWeather={getSearchWeather}
                     changeLocation={onInputChange}
                     isError={isError}
