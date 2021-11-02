@@ -21,7 +21,7 @@
   width: 300px;
   height: 200px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  overflow: hidden;
+  overflow-y: scroll;
  transform: translate(-50%,-50%);
  background-color: #f01;
 }
@@ -35,7 +35,6 @@
   color: black;
   transition: 0.4s;
   border: 2px dotted #00f;
-  
 } 
 
 .dataItem p {
@@ -50,11 +49,5 @@ a:hover {
 } 
 
 
-.error {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  transition: all 0.3s ease;
-  font-size: 15px;
-}
+
  

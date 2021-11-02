@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import { InputGroup, FormControl, Button, Form } from "react-bootstrap";
 
-function SearchBar({ getCityWeather, isError,changeLocation,data }) {
+function SearchBar({ getCityWeather, isError, changeLocation, data }) {
    const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
-  const handleFilter = (event) => {
-    const searchWord = event.target.value;
+  const handleFilter = (e) => {
+    const searchWord = e.target.value;
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
       return value.name.toLowerCase().includes(searchWord.toLowerCase());
@@ -29,6 +29,7 @@ function SearchBar({ getCityWeather, isError,changeLocation,data }) {
             aria-label="search city"
             aria-describedby="basic-addon2"
             autoComplete="true"
+             onChange={(e)=>changeLocation(e.target.value)}
           />
           
           <Button variant="primary" id="button-addon2" style={{border: '1px solid #03a',borderRadius:' 0 10px 10px 0 ', backgroundColor: 'transparent', color:'#05a' }} >
@@ -37,7 +38,7 @@ function SearchBar({ getCityWeather, isError,changeLocation,data }) {
         </InputGroup>
         {isError ? (
           <label htmlFor="input" className="label">
-            <span className="error" style={{ color: "red", fontSize: "20px" }}>
+            <span className="error" style={{ color: "red", fontSize: "20px",position:"absolute", margin:"0 21%" }}>
               City not found !
             </span>
           </label>
@@ -46,7 +47,7 @@ function SearchBar({ getCityWeather, isError,changeLocation,data }) {
             <div className="results">
               {filteredData.slice(0, 15).map((value, key) => {
                  return (
-                  <a className="dataItem" href={value.name} onChange={(e) =>changeLocation(handleFilter)}  >
+                   <a className="dataItem"  onChange={()=>changeLocation(handleFilter)} > 
                     <p>{value.name} </p>
                   </a>
                 );
