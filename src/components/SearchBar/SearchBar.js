@@ -3,14 +3,14 @@ import { InputGroup, FormControl, Button, Form } from "react-bootstrap";
 
 
 
-function SearchBar({ getCityWeather, isError, changeLocation, data }) {
+function SearchBar({ getCityWeather, isError, changeLocation, cityData }) {
    const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
   const handleFilter = (e) => {
     const searchWord = e.target.value;
     setWordEntered(searchWord);
-    const newFilter = data.filter((value) => {
+    const newFilter = cityData.filter((value) => {
       return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
 

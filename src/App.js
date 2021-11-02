@@ -149,7 +149,7 @@ const handleLocationClick = (location,country) => {
                     getCityWeather={getSearchWeather}
                     changeLocation={onInputChange}
                     isError={isError}
-                    data={cityData}
+                    cityData={cityData}
                   />
                 </div>
                 <div sytle={{ marginTop: "8%" }}>
