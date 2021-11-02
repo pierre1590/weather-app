@@ -10,6 +10,8 @@ import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
 import cityData from "./city.list.json";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
     })
     .catch((error) => {
       setError(true);
+      toast.error('City not found!');
     })
   }
 
@@ -161,6 +164,7 @@ const handleLocationClick = (location,country) => {
           )}
         </>
       )}
+      <ToastContainer/>
     </div>
   );
 }

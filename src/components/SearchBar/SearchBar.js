@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import { InputGroup, FormControl, Button, Form } from "react-bootstrap";
 
+
+
 function SearchBar({ getCityWeather, isError, changeLocation, data }) {
    const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
@@ -36,18 +38,12 @@ function SearchBar({ getCityWeather, isError, changeLocation, data }) {
             <i className="fas fa-search"></i>
           </Button>
         </InputGroup>
-        {isError ? (
-          <label htmlFor="input" className="label">
-            <span className="error" style={{ color: "red", fontSize: "20px",position:"absolute", margin:"0 21%" }}>
-              City not found !
-            </span>
-          </label>
-        ) : null}
+        {isError}
         {filteredData.length != 0 && (
             <div className="results">
               {filteredData.slice(0, 15).map((value, key) => {
                  return (
-                   <a className="dataItem"  onChange={()=>changeLocation(handleFilter)} > 
+                   <a className="dataItem"   onChange={(e)=>changeLocation(handleFilter)} > 
                     <p>{value.name} </p>
                   </a>
                 );
@@ -56,6 +52,7 @@ function SearchBar({ getCityWeather, isError, changeLocation, data }) {
       )}
       </Form>
     </div>
+   
   );
 }
 

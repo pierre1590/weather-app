@@ -94,6 +94,11 @@ body {
     height: 350vh;
   }
 
+  .searchbar{
+    width: 100px;
+    margin:2px 40% 0;
+  }
+  
   
 }
 
@@ -105,6 +110,14 @@ body {
   .container {
     height: 195vh;
   }
+
+  .searchbar{
+    width: 150px;
+    margin:0px 40% 0;
+  }
+
+ 
+  
 }
 
 @media only screen and (max-width: 680px) {
@@ -115,6 +128,13 @@ body {
   .container {
     height: 240vh;
   }
+
+  .searchbar{
+    width: 150px;
+    margin:0px 40% 0;
+  }
+
+  
 }
 
 @media only screen and (max-width: 750px) {
@@ -125,6 +145,13 @@ body {
   .container {
     height: 235vh;
   }
+
+  .searchbar{
+    width: 150px;
+    margin:0px 40% 0;
+  }
+
+  
 }
 
 @media only screen and (max-width: 990px) {
@@ -135,6 +162,13 @@ body {
   .container {
     height: 248vh;
   }
+
+  .searchbar{
+    width: 165px;
+    margin:0px 40% 0;
+  }
+
+  
 }
 
 @media only screen and (min-width: 1024px) {
@@ -145,4 +179,11 @@ body {
   .container {
     height: 70vh;
   }
+
+  .searchbar{
+    width: 250px;
+    margin:0px 40% 0;
+  }
+
+  
 }
