@@ -3,23 +3,10 @@ import { InputGroup, FormControl, Button, Form } from "react-bootstrap";
 
 
 
-function SearchBar({ getCityWeather, isError, changeLocation, cityData }) {
-   const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
+function SearchBar({ getCityWeather, isError, changeLocation}) {
+  
 
-  const handleFilter = (e) => {
-    const searchWord = e.target.value;
-    setWordEntered(searchWord);
-    const newFilter = cityData.filter((value) => {
-      return value.name.toLowerCase().includes(searchWord.toLowerCase());
-    });
-
-    if (searchWord === "") {
-      setFilteredData([]);
-    } else {
-      setFilteredData(newFilter);
-    }
-  };
+   
   
   return (
     <div className="searchbar">
@@ -39,17 +26,6 @@ function SearchBar({ getCityWeather, isError, changeLocation, cityData }) {
           </Button>
         </InputGroup>
         {isError}
-        {filteredData.length != 0 && (
-            <div className="results">
-              {filteredData.slice(0, 15).map((value, key) => {
-                 return (
-                   <a className="dataItem"   onChange={(e)=>changeLocation(handleFilter)} > 
-                    <p>{value.name} </p>
-                  </a>
-                );
-               })}
-        </div>
-      )}
       </Form>
     </div>
    

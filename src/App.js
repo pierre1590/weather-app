@@ -9,7 +9,6 @@ import  CloseButton  from "react-bootstrap/CloseButton";
 import { getCityForecast, getCityWeather } from "./utils/fetchData";
 import { useDebounce } from "./utils/debounceFn";
 import ReactLoading from "react-loading";
-import cityData from "./city.list.json";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -149,7 +148,7 @@ const handleLocationClick = (location,country) => {
                     getCityWeather={getSearchWeather}
                     changeLocation={onInputChange}
                     isError={isError}
-                    cityData={cityData}
+                   
                   />
                 </div>
                 <div sytle={{ marginTop: "8%" }}>
