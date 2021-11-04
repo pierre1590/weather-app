@@ -37,7 +37,7 @@ https://openweathermap.org/current
 ## Built with 
 - React.js
 - Axios
-- LocalsStorage
+- LocalStorage
 
 ## Installation
 1) Clone the repo: 
