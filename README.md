@@ -36,8 +36,9 @@ https://openweathermap.org/current
 
 ## Built with 
 - React.js
+- Axios
 
-# Installation
+## Installation
 1) Clone the repo: 
 ```
 git clone  https://github.com/pierre1590/weather-app
