@@ -40,7 +40,7 @@ https://openweathermap.org/current
 # Installation
 1) Clone the repo: 
 ```
-https://github.com/pierre1590/weather-app
+git clone  https://github.com/pierre1590/weather-app
 ```
 2) Create an account on Openweathermap to create your key for using the API.
 3) In the root folder, create an ".env" file in which to store the API key
