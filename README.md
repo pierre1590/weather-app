@@ -3,12 +3,56 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/pierre1590/weather-app?color=red&logoColor=yellow&style=plastic)
 ![GitHub last commit](https://img.shields.io/github/last-commit/pierre1590/weather-app)
 ![GitHub Repo stars](https://img.shields.io/github/stars/pierre1590/weather-app?color=blue&style=social)
-# Weather 
+# Weather app
+
 <img src="https://i.ibb.co/c8zbCmm/App-weather.jpg" alt="Image weather app">
+
+
+
+
+
+
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About the project</a>
+    </li>
+    <li><a href=#apis>API</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href=#installation>Installation</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+## About the project
 The app created allows you to search and show the weather of a location.
 
+See it in action : https://weather-piero.herokuapp.com/
 
-# Getting Started with Create React App
+## API 
+Current API Openweathermap:
+https://openweathermap.org/current
+
+## Built with 
+- React.js
+
+# Installation
+1) Clone the repo: 
+```
+https://github.com/pierre1590/weather-app
+```
+2) Create an account on Openweathermap to create your key for using the API.
+3) In the root folder, create an ".env" file in which to store the API key
+4) Install project dependencies :
+```
+     npm install 
+```
+5) Start the server :
+```
+     npm start
+```
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
