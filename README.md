@@ -31,8 +31,8 @@ The app created allows you to search and show the weather of a location.
 See it in action : https://weather-piero.herokuapp.com/
 
 ## API 
-Current API Openweathermap:
-https://openweathermap.org/current
+- Current API Openweathermap:
+  https://openweathermap.org/current
 
 ## Built with 
 - React.js
