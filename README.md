@@ -18,7 +18,7 @@
     <li>
       <a href="#about-the-project">About the project</a>
     </li>
-    <li><a href=#apis>API</a></li>
+    <li><a href=#api>API</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href=#installation>Installation</a></li>
     <li><a href="#contact">Contact</a></li>
